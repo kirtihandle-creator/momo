@@ -199,6 +199,606 @@ import { IssueSettings } from "./editors/IssueSettings";
 import { ReleaseWizard } from "./editors/ReleaseWizard";
 import { SprintDetails } from "./editors/SprintDetails";
 import { MilestonePreview } from "./editors/MilestonePreview";
+import { OrderGrid } from "./views/OrderGrid";
+import { InvoiceTimeline } from "./views/InvoiceTimeline";
+import { CustomerSummary } from "./views/CustomerSummary";
+import { ProductExplorer } from "./views/ProductExplorer";
+import { ShipmentBoard } from "./views/ShipmentBoard";
+import { TicketGrid } from "./views/TicketGrid";
+import { SessionTimeline } from "./views/SessionTimeline";
+import { ProfileSummary } from "./views/ProfileSummary";
+import { ProjectExplorer } from "./views/ProjectExplorer";
+import { TaskBoard } from "./views/TaskBoard";
+import { CommentGrid } from "./views/CommentGrid";
+import { ReviewTimeline } from "./views/ReviewTimeline";
+import { PaymentSummary } from "./views/PaymentSummary";
+import { RefundExplorer } from "./views/RefundExplorer";
+import { CouponBoard } from "./views/CouponBoard";
+import { CartGrid } from "./views/CartGrid";
+import { WishlistTimeline } from "./views/WishlistTimeline";
+import { AlertSummary } from "./views/AlertSummary";
+import { MetricExplorer } from "./views/MetricExplorer";
+import { ReportBoard } from "./views/ReportBoard";
+import { DashboardGrid } from "./views/DashboardGrid";
+import { WidgetTimeline } from "./views/WidgetTimeline";
+import { ChannelSummary } from "./views/ChannelSummary";
+import { MessageExplorer } from "./views/MessageExplorer";
+import { ThreadBoard } from "./views/ThreadBoard";
+import { ContactGrid } from "./views/ContactGrid";
+import { LeadTimeline } from "./views/LeadTimeline";
+import { DealSummary } from "./views/DealSummary";
+import { CampaignExplorer } from "./views/CampaignExplorer";
+import { SegmentBoard } from "./views/SegmentBoard";
+import { AudienceGrid } from "./views/AudienceGrid";
+import { SurveyTimeline } from "./views/SurveyTimeline";
+import { QuestionSummary } from "./views/QuestionSummary";
+import { AnswerExplorer } from "./views/AnswerExplorer";
+import { QuizBoard } from "./views/QuizBoard";
+import { LessonGrid } from "./views/LessonGrid";
+import { CourseTimeline } from "./views/CourseTimeline";
+import { ModuleSummary } from "./views/ModuleSummary";
+import { BadgeExplorer } from "./views/BadgeExplorer";
+import { RewardBoard } from "./views/RewardBoard";
+import { TeamGrid } from "./views/TeamGrid";
+import { MemberTimeline } from "./views/MemberTimeline";
+import { RoleSummary } from "./views/RoleSummary";
+import { PermissionExplorer } from "./views/PermissionExplorer";
+import { PolicyBoard } from "./views/PolicyBoard";
+import { AuditGrid } from "./views/AuditGrid";
+import { LogTimeline } from "./views/LogTimeline";
+import { EventSummary } from "./views/EventSummary";
+import { ScheduleExplorer } from "./views/ScheduleExplorer";
+import { CalendarBoard } from "./views/CalendarBoard";
+import { MeetingGrid } from "./views/MeetingGrid";
+import { ReminderTimeline } from "./views/ReminderTimeline";
+import { NoteSummary } from "./views/NoteSummary";
+import { DocumentExplorer } from "./views/DocumentExplorer";
+import { FolderBoard } from "./views/FolderBoard";
+import { FileGrid } from "./views/FileGrid";
+import { ImageTimeline } from "./views/ImageTimeline";
+import { VideoSummary } from "./views/VideoSummary";
+import { PlaylistExplorer } from "./views/PlaylistExplorer";
+import { TrackBoard } from "./views/TrackBoard";
+import { AlbumGrid } from "./views/AlbumGrid";
+import { ArtistTimeline } from "./views/ArtistTimeline";
+import { PodcastSummary } from "./views/PodcastSummary";
+import { EpisodeExplorer } from "./views/EpisodeExplorer";
+import { RecipeBoard } from "./views/RecipeBoard";
+import { IngredientGrid } from "./views/IngredientGrid";
+import { MenuTimeline } from "./views/MenuTimeline";
+import { ReservationSummary } from "./views/ReservationSummary";
+import { TableExplorer } from "./views/TableExplorer";
+import { GuestBoard } from "./views/GuestBoard";
+import { RoomGrid } from "./views/RoomGrid";
+import { BookingTimeline } from "./views/BookingTimeline";
+import { FlightSummary } from "./views/FlightSummary";
+import { HotelExplorer } from "./views/HotelExplorer";
+import { TripBoard } from "./views/TripBoard";
+import { ExpenseGrid } from "./views/ExpenseGrid";
+import { BudgetTimeline } from "./views/BudgetTimeline";
+import { AccountSummary } from "./views/AccountSummary";
+import { TransactionExplorer } from "./views/TransactionExplorer";
+import { WalletBoard } from "./views/WalletBoard";
+import { DeviceGrid } from "./views/DeviceGrid";
+import { SensorTimeline } from "./views/SensorTimeline";
+import { ReadingSummary } from "./views/ReadingSummary";
+import { FirmwareExplorer } from "./views/FirmwareExplorer";
+import { VehicleBoard } from "./views/VehicleBoard";
+import { RouteGrid } from "./views/RouteGrid";
+import { StopTimeline } from "./views/StopTimeline";
+import { DriverSummary } from "./views/DriverSummary";
+import { PatientExplorer } from "./views/PatientExplorer";
+import { AppointmentBoard } from "./views/AppointmentBoard";
+import { PrescriptionGrid } from "./views/PrescriptionGrid";
+import { ClinicTimeline } from "./views/ClinicTimeline";
+import { InventorySummary } from "./views/InventorySummary";
+import { WarehouseExplorer } from "./views/WarehouseExplorer";
+import { SupplierBoard } from "./views/SupplierBoard";
+import { ContractGrid } from "./views/ContractGrid";
+import { IssueTimeline } from "./views/IssueTimeline";
+import { ReleaseSummary } from "./views/ReleaseSummary";
+import { SprintExplorer } from "./views/SprintExplorer";
+import { MilestoneBoard } from "./views/MilestoneBoard";
+import { OrderStoreDemo } from "./stores/OrderStore";
+import { InvoiceStoreDemo } from "./stores/InvoiceStore";
+import { CustomerStoreDemo } from "./stores/CustomerStore";
+import { ProductStoreDemo } from "./stores/ProductStore";
+import { ShipmentStoreDemo } from "./stores/ShipmentStore";
+import { TicketStoreDemo } from "./stores/TicketStore";
+import { SessionStoreDemo } from "./stores/SessionStore";
+import { ProfileStoreDemo } from "./stores/ProfileStore";
+import { ProjectStoreDemo } from "./stores/ProjectStore";
+import { TaskStoreDemo } from "./stores/TaskStore";
+import { CommentStoreDemo } from "./stores/CommentStore";
+import { ReviewStoreDemo } from "./stores/ReviewStore";
+import { PaymentStoreDemo } from "./stores/PaymentStore";
+import { RefundStoreDemo } from "./stores/RefundStore";
+import { CouponStoreDemo } from "./stores/CouponStore";
+import { CartStoreDemo } from "./stores/CartStore";
+import { WishlistStoreDemo } from "./stores/WishlistStore";
+import { AlertStoreDemo } from "./stores/AlertStore";
+import { MetricStoreDemo } from "./stores/MetricStore";
+import { ReportStoreDemo } from "./stores/ReportStore";
+import { DashboardStoreDemo } from "./stores/DashboardStore";
+import { WidgetStoreDemo } from "./stores/WidgetStore";
+import { ChannelStoreDemo } from "./stores/ChannelStore";
+import { MessageStoreDemo } from "./stores/MessageStore";
+import { ThreadStoreDemo } from "./stores/ThreadStore";
+import { ContactStoreDemo } from "./stores/ContactStore";
+import { LeadStoreDemo } from "./stores/LeadStore";
+import { DealStoreDemo } from "./stores/DealStore";
+import { CampaignStoreDemo } from "./stores/CampaignStore";
+import { SegmentStoreDemo } from "./stores/SegmentStore";
+import { AudienceStoreDemo } from "./stores/AudienceStore";
+import { SurveyStoreDemo } from "./stores/SurveyStore";
+import { QuestionStoreDemo } from "./stores/QuestionStore";
+import { AnswerStoreDemo } from "./stores/AnswerStore";
+import { QuizStoreDemo } from "./stores/QuizStore";
+import { LessonStoreDemo } from "./stores/LessonStore";
+import { CourseStoreDemo } from "./stores/CourseStore";
+import { ModuleStoreDemo } from "./stores/ModuleStore";
+import { BadgeStoreDemo } from "./stores/BadgeStore";
+import { RewardStoreDemo } from "./stores/RewardStore";
+import { TeamStoreDemo } from "./stores/TeamStore";
+import { MemberStoreDemo } from "./stores/MemberStore";
+import { RoleStoreDemo } from "./stores/RoleStore";
+import { PermissionStoreDemo } from "./stores/PermissionStore";
+import { PolicyStoreDemo } from "./stores/PolicyStore";
+import { AuditStoreDemo } from "./stores/AuditStore";
+import { LogStoreDemo } from "./stores/LogStore";
+import { EventStoreDemo } from "./stores/EventStore";
+import { ScheduleStoreDemo } from "./stores/ScheduleStore";
+import { CalendarStoreDemo } from "./stores/CalendarStore";
+import { MeetingStoreDemo } from "./stores/MeetingStore";
+import { ReminderStoreDemo } from "./stores/ReminderStore";
+import { NoteStoreDemo } from "./stores/NoteStore";
+import { DocumentStoreDemo } from "./stores/DocumentStore";
+import { FolderStoreDemo } from "./stores/FolderStore";
+import { FileStoreDemo } from "./stores/FileStore";
+import { ImageStoreDemo } from "./stores/ImageStore";
+import { VideoStoreDemo } from "./stores/VideoStore";
+import { PlaylistStoreDemo } from "./stores/PlaylistStore";
+import { TrackStoreDemo } from "./stores/TrackStore";
+import { AlbumStoreDemo } from "./stores/AlbumStore";
+import { ArtistStoreDemo } from "./stores/ArtistStore";
+import { PodcastStoreDemo } from "./stores/PodcastStore";
+import { EpisodeStoreDemo } from "./stores/EpisodeStore";
+import { RecipeStoreDemo } from "./stores/RecipeStore";
+import { IngredientStoreDemo } from "./stores/IngredientStore";
+import { MenuStoreDemo } from "./stores/MenuStore";
+import { ReservationStoreDemo } from "./stores/ReservationStore";
+import { TableStoreDemo } from "./stores/TableStore";
+import { GuestStoreDemo } from "./stores/GuestStore";
+import { RoomStoreDemo } from "./stores/RoomStore";
+import { BookingStoreDemo } from "./stores/BookingStore";
+import { FlightStoreDemo } from "./stores/FlightStore";
+import { HotelStoreDemo } from "./stores/HotelStore";
+import { TripStoreDemo } from "./stores/TripStore";
+import { ExpenseStoreDemo } from "./stores/ExpenseStore";
+import { BudgetStoreDemo } from "./stores/BudgetStore";
+import { AccountStoreDemo } from "./stores/AccountStore";
+import { TransactionStoreDemo } from "./stores/TransactionStore";
+import { WalletStoreDemo } from "./stores/WalletStore";
+import { DeviceStoreDemo } from "./stores/DeviceStore";
+import { SensorStoreDemo } from "./stores/SensorStore";
+import { ReadingStoreDemo } from "./stores/ReadingStore";
+import { FirmwareStoreDemo } from "./stores/FirmwareStore";
+import { VehicleStoreDemo } from "./stores/VehicleStore";
+import { RouteStoreDemo } from "./stores/RouteStore";
+import { StopStoreDemo } from "./stores/StopStore";
+import { DriverStoreDemo } from "./stores/DriverStore";
+import { PatientStoreDemo } from "./stores/PatientStore";
+import { AppointmentStoreDemo } from "./stores/AppointmentStore";
+import { PrescriptionStoreDemo } from "./stores/PrescriptionStore";
+import { ClinicStoreDemo } from "./stores/ClinicStore";
+import { InventoryStoreDemo } from "./stores/InventoryStore";
+import { WarehouseStoreDemo } from "./stores/WarehouseStore";
+import { SupplierStoreDemo } from "./stores/SupplierStore";
+import { ContractStoreDemo } from "./stores/ContractStore";
+import { IssueStoreDemo } from "./stores/IssueStore";
+import { ReleaseStoreDemo } from "./stores/ReleaseStore";
+import { SprintStoreDemo } from "./stores/SprintStore";
+import { MilestoneStoreDemo } from "./stores/MilestoneStore";
+import { OrderDialog } from "./dialogs/OrderDialog";
+import { InvoiceDialog } from "./dialogs/InvoiceDialog";
+import { CustomerDialog } from "./dialogs/CustomerDialog";
+import { ProductDialog } from "./dialogs/ProductDialog";
+import { ShipmentDialog } from "./dialogs/ShipmentDialog";
+import { TicketDialog } from "./dialogs/TicketDialog";
+import { SessionDialog } from "./dialogs/SessionDialog";
+import { ProfileDialog } from "./dialogs/ProfileDialog";
+import { ProjectDialog } from "./dialogs/ProjectDialog";
+import { TaskDialog } from "./dialogs/TaskDialog";
+import { CommentDialog } from "./dialogs/CommentDialog";
+import { ReviewDialog } from "./dialogs/ReviewDialog";
+import { PaymentDialog } from "./dialogs/PaymentDialog";
+import { RefundDialog } from "./dialogs/RefundDialog";
+import { CouponDialog } from "./dialogs/CouponDialog";
+import { CartDialog } from "./dialogs/CartDialog";
+import { WishlistDialog } from "./dialogs/WishlistDialog";
+import { AlertDialog } from "./dialogs/AlertDialog";
+import { MetricDialog } from "./dialogs/MetricDialog";
+import { ReportDialog } from "./dialogs/ReportDialog";
+import { DashboardDialog } from "./dialogs/DashboardDialog";
+import { WidgetDialog } from "./dialogs/WidgetDialog";
+import { ChannelDialog } from "./dialogs/ChannelDialog";
+import { MessageDialog } from "./dialogs/MessageDialog";
+import { ThreadDialog } from "./dialogs/ThreadDialog";
+import { ContactDialog } from "./dialogs/ContactDialog";
+import { LeadDialog } from "./dialogs/LeadDialog";
+import { DealDialog } from "./dialogs/DealDialog";
+import { CampaignDialog } from "./dialogs/CampaignDialog";
+import { SegmentDialog } from "./dialogs/SegmentDialog";
+import { AudienceDialog } from "./dialogs/AudienceDialog";
+import { SurveyDialog } from "./dialogs/SurveyDialog";
+import { QuestionDialog } from "./dialogs/QuestionDialog";
+import { AnswerDialog } from "./dialogs/AnswerDialog";
+import { QuizDialog } from "./dialogs/QuizDialog";
+import { LessonDialog } from "./dialogs/LessonDialog";
+import { CourseDialog } from "./dialogs/CourseDialog";
+import { ModuleDialog } from "./dialogs/ModuleDialog";
+import { BadgeDialog } from "./dialogs/BadgeDialog";
+import { RewardDialog } from "./dialogs/RewardDialog";
+import { TeamDialog } from "./dialogs/TeamDialog";
+import { MemberDialog } from "./dialogs/MemberDialog";
+import { RoleDialog } from "./dialogs/RoleDialog";
+import { PermissionDialog } from "./dialogs/PermissionDialog";
+import { PolicyDialog } from "./dialogs/PolicyDialog";
+import { AuditDialog } from "./dialogs/AuditDialog";
+import { LogDialog } from "./dialogs/LogDialog";
+import { EventDialog } from "./dialogs/EventDialog";
+import { ScheduleDialog } from "./dialogs/ScheduleDialog";
+import { CalendarDialog } from "./dialogs/CalendarDialog";
+import { MeetingDialog } from "./dialogs/MeetingDialog";
+import { ReminderDialog } from "./dialogs/ReminderDialog";
+import { NoteDialog } from "./dialogs/NoteDialog";
+import { DocumentDialog } from "./dialogs/DocumentDialog";
+import { FolderDialog } from "./dialogs/FolderDialog";
+import { FileDialog } from "./dialogs/FileDialog";
+import { ImageDialog } from "./dialogs/ImageDialog";
+import { VideoDialog } from "./dialogs/VideoDialog";
+import { PlaylistDialog } from "./dialogs/PlaylistDialog";
+import { TrackDialog } from "./dialogs/TrackDialog";
+import { AlbumDialog } from "./dialogs/AlbumDialog";
+import { ArtistDialog } from "./dialogs/ArtistDialog";
+import { PodcastDialog } from "./dialogs/PodcastDialog";
+import { EpisodeDialog } from "./dialogs/EpisodeDialog";
+import { RecipeDialog } from "./dialogs/RecipeDialog";
+import { IngredientDialog } from "./dialogs/IngredientDialog";
+import { MenuDialog } from "./dialogs/MenuDialog";
+import { ReservationDialog } from "./dialogs/ReservationDialog";
+import { TableDialog } from "./dialogs/TableDialog";
+import { GuestDialog } from "./dialogs/GuestDialog";
+import { RoomDialog } from "./dialogs/RoomDialog";
+import { BookingDialog } from "./dialogs/BookingDialog";
+import { FlightDialog } from "./dialogs/FlightDialog";
+import { HotelDialog } from "./dialogs/HotelDialog";
+import { TripDialog } from "./dialogs/TripDialog";
+import { ExpenseDialog } from "./dialogs/ExpenseDialog";
+import { BudgetDialog } from "./dialogs/BudgetDialog";
+import { AccountDialog } from "./dialogs/AccountDialog";
+import { TransactionDialog } from "./dialogs/TransactionDialog";
+import { WalletDialog } from "./dialogs/WalletDialog";
+import { DeviceDialog } from "./dialogs/DeviceDialog";
+import { SensorDialog } from "./dialogs/SensorDialog";
+import { ReadingDialog } from "./dialogs/ReadingDialog";
+import { FirmwareDialog } from "./dialogs/FirmwareDialog";
+import { VehicleDialog } from "./dialogs/VehicleDialog";
+import { RouteDialog } from "./dialogs/RouteDialog";
+import { StopDialog } from "./dialogs/StopDialog";
+import { DriverDialog } from "./dialogs/DriverDialog";
+import { PatientDialog } from "./dialogs/PatientDialog";
+import { AppointmentDialog } from "./dialogs/AppointmentDialog";
+import { PrescriptionDialog } from "./dialogs/PrescriptionDialog";
+import { ClinicDialog } from "./dialogs/ClinicDialog";
+import { InventoryDialog } from "./dialogs/InventoryDialog";
+import { WarehouseDialog } from "./dialogs/WarehouseDialog";
+import { SupplierDialog } from "./dialogs/SupplierDialog";
+import { ContractDialog } from "./dialogs/ContractDialog";
+import { IssueDialog } from "./dialogs/IssueDialog";
+import { ReleaseDialog } from "./dialogs/ReleaseDialog";
+import { SprintDialog } from "./dialogs/SprintDialog";
+import { MilestoneDialog } from "./dialogs/MilestoneDialog";
+import { OrderChart } from "./charts/OrderChart";
+import { InvoiceChart } from "./charts/InvoiceChart";
+import { CustomerChart } from "./charts/CustomerChart";
+import { ProductChart } from "./charts/ProductChart";
+import { ShipmentChart } from "./charts/ShipmentChart";
+import { TicketChart } from "./charts/TicketChart";
+import { SessionChart } from "./charts/SessionChart";
+import { ProfileChart } from "./charts/ProfileChart";
+import { ProjectChart } from "./charts/ProjectChart";
+import { TaskChart } from "./charts/TaskChart";
+import { CommentChart } from "./charts/CommentChart";
+import { ReviewChart } from "./charts/ReviewChart";
+import { PaymentChart } from "./charts/PaymentChart";
+import { RefundChart } from "./charts/RefundChart";
+import { CouponChart } from "./charts/CouponChart";
+import { CartChart } from "./charts/CartChart";
+import { WishlistChart } from "./charts/WishlistChart";
+import { AlertChart } from "./charts/AlertChart";
+import { MetricChart } from "./charts/MetricChart";
+import { ReportChart } from "./charts/ReportChart";
+import { DashboardChart } from "./charts/DashboardChart";
+import { WidgetChart } from "./charts/WidgetChart";
+import { ChannelChart } from "./charts/ChannelChart";
+import { MessageChart } from "./charts/MessageChart";
+import { ThreadChart } from "./charts/ThreadChart";
+import { ContactChart } from "./charts/ContactChart";
+import { LeadChart } from "./charts/LeadChart";
+import { DealChart } from "./charts/DealChart";
+import { CampaignChart } from "./charts/CampaignChart";
+import { SegmentChart } from "./charts/SegmentChart";
+import { AudienceChart } from "./charts/AudienceChart";
+import { SurveyChart } from "./charts/SurveyChart";
+import { QuestionChart } from "./charts/QuestionChart";
+import { AnswerChart } from "./charts/AnswerChart";
+import { QuizChart } from "./charts/QuizChart";
+import { LessonChart } from "./charts/LessonChart";
+import { CourseChart } from "./charts/CourseChart";
+import { ModuleChart } from "./charts/ModuleChart";
+import { BadgeChart } from "./charts/BadgeChart";
+import { RewardChart } from "./charts/RewardChart";
+import { TeamChart } from "./charts/TeamChart";
+import { MemberChart } from "./charts/MemberChart";
+import { RoleChart } from "./charts/RoleChart";
+import { PermissionChart } from "./charts/PermissionChart";
+import { PolicyChart } from "./charts/PolicyChart";
+import { AuditChart } from "./charts/AuditChart";
+import { LogChart } from "./charts/LogChart";
+import { EventChart } from "./charts/EventChart";
+import { ScheduleChart } from "./charts/ScheduleChart";
+import { CalendarChart } from "./charts/CalendarChart";
+import { MeetingChart } from "./charts/MeetingChart";
+import { ReminderChart } from "./charts/ReminderChart";
+import { NoteChart } from "./charts/NoteChart";
+import { DocumentChart } from "./charts/DocumentChart";
+import { FolderChart } from "./charts/FolderChart";
+import { FileChart } from "./charts/FileChart";
+import { ImageChart } from "./charts/ImageChart";
+import { VideoChart } from "./charts/VideoChart";
+import { PlaylistChart } from "./charts/PlaylistChart";
+import { TrackChart } from "./charts/TrackChart";
+import { AlbumChart } from "./charts/AlbumChart";
+import { ArtistChart } from "./charts/ArtistChart";
+import { PodcastChart } from "./charts/PodcastChart";
+import { EpisodeChart } from "./charts/EpisodeChart";
+import { RecipeChart } from "./charts/RecipeChart";
+import { IngredientChart } from "./charts/IngredientChart";
+import { MenuChart } from "./charts/MenuChart";
+import { ReservationChart } from "./charts/ReservationChart";
+import { TableChart } from "./charts/TableChart";
+import { GuestChart } from "./charts/GuestChart";
+import { RoomChart } from "./charts/RoomChart";
+import { BookingChart } from "./charts/BookingChart";
+import { FlightChart } from "./charts/FlightChart";
+import { HotelChart } from "./charts/HotelChart";
+import { TripChart } from "./charts/TripChart";
+import { ExpenseChart } from "./charts/ExpenseChart";
+import { BudgetChart } from "./charts/BudgetChart";
+import { AccountChart } from "./charts/AccountChart";
+import { TransactionChart } from "./charts/TransactionChart";
+import { WalletChart } from "./charts/WalletChart";
+import { DeviceChart } from "./charts/DeviceChart";
+import { SensorChart } from "./charts/SensorChart";
+import { ReadingChart } from "./charts/ReadingChart";
+import { FirmwareChart } from "./charts/FirmwareChart";
+import { VehicleChart } from "./charts/VehicleChart";
+import { RouteChart } from "./charts/RouteChart";
+import { StopChart } from "./charts/StopChart";
+import { DriverChart } from "./charts/DriverChart";
+import { PatientChart } from "./charts/PatientChart";
+import { AppointmentChart } from "./charts/AppointmentChart";
+import { PrescriptionChart } from "./charts/PrescriptionChart";
+import { ClinicChart } from "./charts/ClinicChart";
+import { InventoryChart } from "./charts/InventoryChart";
+import { WarehouseChart } from "./charts/WarehouseChart";
+import { SupplierChart } from "./charts/SupplierChart";
+import { ContractChart } from "./charts/ContractChart";
+import { IssueChart } from "./charts/IssueChart";
+import { ReleaseChart } from "./charts/ReleaseChart";
+import { SprintChart } from "./charts/SprintChart";
+import { MilestoneChart } from "./charts/MilestoneChart";
+import { OrderFilter } from "./filters/OrderFilter";
+import { InvoiceFilter } from "./filters/InvoiceFilter";
+import { CustomerFilter } from "./filters/CustomerFilter";
+import { ProductFilter } from "./filters/ProductFilter";
+import { ShipmentFilter } from "./filters/ShipmentFilter";
+import { TicketFilter } from "./filters/TicketFilter";
+import { SessionFilter } from "./filters/SessionFilter";
+import { ProfileFilter } from "./filters/ProfileFilter";
+import { ProjectFilter } from "./filters/ProjectFilter";
+import { TaskFilter } from "./filters/TaskFilter";
+import { CommentFilter } from "./filters/CommentFilter";
+import { ReviewFilter } from "./filters/ReviewFilter";
+import { PaymentFilter } from "./filters/PaymentFilter";
+import { RefundFilter } from "./filters/RefundFilter";
+import { CouponFilter } from "./filters/CouponFilter";
+import { CartFilter } from "./filters/CartFilter";
+import { WishlistFilter } from "./filters/WishlistFilter";
+import { AlertFilter } from "./filters/AlertFilter";
+import { MetricFilter } from "./filters/MetricFilter";
+import { ReportFilter } from "./filters/ReportFilter";
+import { DashboardFilter } from "./filters/DashboardFilter";
+import { WidgetFilter } from "./filters/WidgetFilter";
+import { ChannelFilter } from "./filters/ChannelFilter";
+import { MessageFilter } from "./filters/MessageFilter";
+import { ThreadFilter } from "./filters/ThreadFilter";
+import { ContactFilter } from "./filters/ContactFilter";
+import { LeadFilter } from "./filters/LeadFilter";
+import { DealFilter } from "./filters/DealFilter";
+import { CampaignFilter } from "./filters/CampaignFilter";
+import { SegmentFilter } from "./filters/SegmentFilter";
+import { AudienceFilter } from "./filters/AudienceFilter";
+import { SurveyFilter } from "./filters/SurveyFilter";
+import { QuestionFilter } from "./filters/QuestionFilter";
+import { AnswerFilter } from "./filters/AnswerFilter";
+import { QuizFilter } from "./filters/QuizFilter";
+import { LessonFilter } from "./filters/LessonFilter";
+import { CourseFilter } from "./filters/CourseFilter";
+import { ModuleFilter } from "./filters/ModuleFilter";
+import { BadgeFilter } from "./filters/BadgeFilter";
+import { RewardFilter } from "./filters/RewardFilter";
+import { TeamFilter } from "./filters/TeamFilter";
+import { MemberFilter } from "./filters/MemberFilter";
+import { RoleFilter } from "./filters/RoleFilter";
+import { PermissionFilter } from "./filters/PermissionFilter";
+import { PolicyFilter } from "./filters/PolicyFilter";
+import { AuditFilter } from "./filters/AuditFilter";
+import { LogFilter } from "./filters/LogFilter";
+import { EventFilter } from "./filters/EventFilter";
+import { ScheduleFilter } from "./filters/ScheduleFilter";
+import { CalendarFilter } from "./filters/CalendarFilter";
+import { MeetingFilter } from "./filters/MeetingFilter";
+import { ReminderFilter } from "./filters/ReminderFilter";
+import { NoteFilter } from "./filters/NoteFilter";
+import { DocumentFilter } from "./filters/DocumentFilter";
+import { FolderFilter } from "./filters/FolderFilter";
+import { FileFilter } from "./filters/FileFilter";
+import { ImageFilter } from "./filters/ImageFilter";
+import { VideoFilter } from "./filters/VideoFilter";
+import { PlaylistFilter } from "./filters/PlaylistFilter";
+import { TrackFilter } from "./filters/TrackFilter";
+import { AlbumFilter } from "./filters/AlbumFilter";
+import { ArtistFilter } from "./filters/ArtistFilter";
+import { PodcastFilter } from "./filters/PodcastFilter";
+import { EpisodeFilter } from "./filters/EpisodeFilter";
+import { RecipeFilter } from "./filters/RecipeFilter";
+import { IngredientFilter } from "./filters/IngredientFilter";
+import { MenuFilter } from "./filters/MenuFilter";
+import { ReservationFilter } from "./filters/ReservationFilter";
+import { TableFilter } from "./filters/TableFilter";
+import { GuestFilter } from "./filters/GuestFilter";
+import { RoomFilter } from "./filters/RoomFilter";
+import { BookingFilter } from "./filters/BookingFilter";
+import { FlightFilter } from "./filters/FlightFilter";
+import { HotelFilter } from "./filters/HotelFilter";
+import { TripFilter } from "./filters/TripFilter";
+import { ExpenseFilter } from "./filters/ExpenseFilter";
+import { BudgetFilter } from "./filters/BudgetFilter";
+import { AccountFilter } from "./filters/AccountFilter";
+import { TransactionFilter } from "./filters/TransactionFilter";
+import { WalletFilter } from "./filters/WalletFilter";
+import { DeviceFilter } from "./filters/DeviceFilter";
+import { SensorFilter } from "./filters/SensorFilter";
+import { ReadingFilter } from "./filters/ReadingFilter";
+import { FirmwareFilter } from "./filters/FirmwareFilter";
+import { VehicleFilter } from "./filters/VehicleFilter";
+import { RouteFilter } from "./filters/RouteFilter";
+import { StopFilter } from "./filters/StopFilter";
+import { DriverFilter } from "./filters/DriverFilter";
+import { PatientFilter } from "./filters/PatientFilter";
+import { AppointmentFilter } from "./filters/AppointmentFilter";
+import { PrescriptionFilter } from "./filters/PrescriptionFilter";
+import { ClinicFilter } from "./filters/ClinicFilter";
+import { InventoryFilter } from "./filters/InventoryFilter";
+import { WarehouseFilter } from "./filters/WarehouseFilter";
+import { SupplierFilter } from "./filters/SupplierFilter";
+import { ContractFilter } from "./filters/ContractFilter";
+import { IssueFilter } from "./filters/IssueFilter";
+import { ReleaseFilter } from "./filters/ReleaseFilter";
+import { SprintFilter } from "./filters/SprintFilter";
+import { MilestoneFilter } from "./filters/MilestoneFilter";
+import { OrderStats } from "./stats/OrderStats";
+import { InvoiceStats } from "./stats/InvoiceStats";
+import { CustomerStats } from "./stats/CustomerStats";
+import { ProductStats } from "./stats/ProductStats";
+import { ShipmentStats } from "./stats/ShipmentStats";
+import { TicketStats } from "./stats/TicketStats";
+import { SessionStats } from "./stats/SessionStats";
+import { ProfileStats } from "./stats/ProfileStats";
+import { ProjectStats } from "./stats/ProjectStats";
+import { TaskStats } from "./stats/TaskStats";
+import { CommentStats } from "./stats/CommentStats";
+import { ReviewStats } from "./stats/ReviewStats";
+import { PaymentStats } from "./stats/PaymentStats";
+import { RefundStats } from "./stats/RefundStats";
+import { CouponStats } from "./stats/CouponStats";
+import { CartStats } from "./stats/CartStats";
+import { WishlistStats } from "./stats/WishlistStats";
+import { AlertStats } from "./stats/AlertStats";
+import { MetricStats } from "./stats/MetricStats";
+import { ReportStats } from "./stats/ReportStats";
+import { DashboardStats } from "./stats/DashboardStats";
+import { WidgetStats } from "./stats/WidgetStats";
+import { ChannelStats } from "./stats/ChannelStats";
+import { MessageStats } from "./stats/MessageStats";
+import { ThreadStats } from "./stats/ThreadStats";
+import { ContactStats } from "./stats/ContactStats";
+import { LeadStats } from "./stats/LeadStats";
+import { DealStats } from "./stats/DealStats";
+import { CampaignStats } from "./stats/CampaignStats";
+import { SegmentStats } from "./stats/SegmentStats";
+import { AudienceStats } from "./stats/AudienceStats";
+import { SurveyStats } from "./stats/SurveyStats";
+import { QuestionStats } from "./stats/QuestionStats";
+import { AnswerStats } from "./stats/AnswerStats";
+import { QuizStats } from "./stats/QuizStats";
+import { LessonStats } from "./stats/LessonStats";
+import { CourseStats } from "./stats/CourseStats";
+import { ModuleStats } from "./stats/ModuleStats";
+import { BadgeStats } from "./stats/BadgeStats";
+import { RewardStats } from "./stats/RewardStats";
+import { TeamStats } from "./stats/TeamStats";
+import { MemberStats } from "./stats/MemberStats";
+import { RoleStats } from "./stats/RoleStats";
+import { PermissionStats } from "./stats/PermissionStats";
+import { PolicyStats } from "./stats/PolicyStats";
+import { AuditStats } from "./stats/AuditStats";
+import { LogStats } from "./stats/LogStats";
+import { EventStats } from "./stats/EventStats";
+import { ScheduleStats } from "./stats/ScheduleStats";
+import { CalendarStats } from "./stats/CalendarStats";
+import { MeetingStats } from "./stats/MeetingStats";
+import { ReminderStats } from "./stats/ReminderStats";
+import { NoteStats } from "./stats/NoteStats";
+import { DocumentStats } from "./stats/DocumentStats";
+import { FolderStats } from "./stats/FolderStats";
+import { FileStats } from "./stats/FileStats";
+import { ImageStats } from "./stats/ImageStats";
+import { VideoStats } from "./stats/VideoStats";
+import { PlaylistStats } from "./stats/PlaylistStats";
+import { TrackStats } from "./stats/TrackStats";
+import { AlbumStats } from "./stats/AlbumStats";
+import { ArtistStats } from "./stats/ArtistStats";
+import { PodcastStats } from "./stats/PodcastStats";
+import { EpisodeStats } from "./stats/EpisodeStats";
+import { RecipeStats } from "./stats/RecipeStats";
+import { IngredientStats } from "./stats/IngredientStats";
+import { MenuStats } from "./stats/MenuStats";
+import { ReservationStats } from "./stats/ReservationStats";
+import { TableStats } from "./stats/TableStats";
+import { GuestStats } from "./stats/GuestStats";
+import { RoomStats } from "./stats/RoomStats";
+import { BookingStats } from "./stats/BookingStats";
+import { FlightStats } from "./stats/FlightStats";
+import { HotelStats } from "./stats/HotelStats";
+import { TripStats } from "./stats/TripStats";
+import { ExpenseStats } from "./stats/ExpenseStats";
+import { BudgetStats } from "./stats/BudgetStats";
+import { AccountStats } from "./stats/AccountStats";
+import { TransactionStats } from "./stats/TransactionStats";
+import { WalletStats } from "./stats/WalletStats";
+import { DeviceStats } from "./stats/DeviceStats";
+import { SensorStats } from "./stats/SensorStats";
+import { ReadingStats } from "./stats/ReadingStats";
+import { FirmwareStats } from "./stats/FirmwareStats";
+import { VehicleStats } from "./stats/VehicleStats";
+import { RouteStats } from "./stats/RouteStats";
+import { StopStats } from "./stats/StopStats";
+import { DriverStats } from "./stats/DriverStats";
+import { PatientStats } from "./stats/PatientStats";
+import { AppointmentStats } from "./stats/AppointmentStats";
+import { PrescriptionStats } from "./stats/PrescriptionStats";
+import { ClinicStats } from "./stats/ClinicStats";
+import { InventoryStats } from "./stats/InventoryStats";
+import { WarehouseStats } from "./stats/WarehouseStats";
+import { SupplierStats } from "./stats/SupplierStats";
+import { ContractStats } from "./stats/ContractStats";
+import { IssueStats } from "./stats/IssueStats";
+import { ReleaseStats } from "./stats/ReleaseStats";
+import { SprintStats } from "./stats/SprintStats";
+import { MilestoneStats } from "./stats/MilestoneStats";
 
 const widgets = [
   { name: "OrderCard", Component: OrderCard },
@@ -401,6 +1001,606 @@ const widgets = [
   { name: "ReleaseWizard", Component: ReleaseWizard },
   { name: "SprintDetails", Component: SprintDetails },
   { name: "MilestonePreview", Component: MilestonePreview },
+  { name: "OrderGrid", Component: OrderGrid },
+  { name: "InvoiceTimeline", Component: InvoiceTimeline },
+  { name: "CustomerSummary", Component: CustomerSummary },
+  { name: "ProductExplorer", Component: ProductExplorer },
+  { name: "ShipmentBoard", Component: ShipmentBoard },
+  { name: "TicketGrid", Component: TicketGrid },
+  { name: "SessionTimeline", Component: SessionTimeline },
+  { name: "ProfileSummary", Component: ProfileSummary },
+  { name: "ProjectExplorer", Component: ProjectExplorer },
+  { name: "TaskBoard", Component: TaskBoard },
+  { name: "CommentGrid", Component: CommentGrid },
+  { name: "ReviewTimeline", Component: ReviewTimeline },
+  { name: "PaymentSummary", Component: PaymentSummary },
+  { name: "RefundExplorer", Component: RefundExplorer },
+  { name: "CouponBoard", Component: CouponBoard },
+  { name: "CartGrid", Component: CartGrid },
+  { name: "WishlistTimeline", Component: WishlistTimeline },
+  { name: "AlertSummary", Component: AlertSummary },
+  { name: "MetricExplorer", Component: MetricExplorer },
+  { name: "ReportBoard", Component: ReportBoard },
+  { name: "DashboardGrid", Component: DashboardGrid },
+  { name: "WidgetTimeline", Component: WidgetTimeline },
+  { name: "ChannelSummary", Component: ChannelSummary },
+  { name: "MessageExplorer", Component: MessageExplorer },
+  { name: "ThreadBoard", Component: ThreadBoard },
+  { name: "ContactGrid", Component: ContactGrid },
+  { name: "LeadTimeline", Component: LeadTimeline },
+  { name: "DealSummary", Component: DealSummary },
+  { name: "CampaignExplorer", Component: CampaignExplorer },
+  { name: "SegmentBoard", Component: SegmentBoard },
+  { name: "AudienceGrid", Component: AudienceGrid },
+  { name: "SurveyTimeline", Component: SurveyTimeline },
+  { name: "QuestionSummary", Component: QuestionSummary },
+  { name: "AnswerExplorer", Component: AnswerExplorer },
+  { name: "QuizBoard", Component: QuizBoard },
+  { name: "LessonGrid", Component: LessonGrid },
+  { name: "CourseTimeline", Component: CourseTimeline },
+  { name: "ModuleSummary", Component: ModuleSummary },
+  { name: "BadgeExplorer", Component: BadgeExplorer },
+  { name: "RewardBoard", Component: RewardBoard },
+  { name: "TeamGrid", Component: TeamGrid },
+  { name: "MemberTimeline", Component: MemberTimeline },
+  { name: "RoleSummary", Component: RoleSummary },
+  { name: "PermissionExplorer", Component: PermissionExplorer },
+  { name: "PolicyBoard", Component: PolicyBoard },
+  { name: "AuditGrid", Component: AuditGrid },
+  { name: "LogTimeline", Component: LogTimeline },
+  { name: "EventSummary", Component: EventSummary },
+  { name: "ScheduleExplorer", Component: ScheduleExplorer },
+  { name: "CalendarBoard", Component: CalendarBoard },
+  { name: "MeetingGrid", Component: MeetingGrid },
+  { name: "ReminderTimeline", Component: ReminderTimeline },
+  { name: "NoteSummary", Component: NoteSummary },
+  { name: "DocumentExplorer", Component: DocumentExplorer },
+  { name: "FolderBoard", Component: FolderBoard },
+  { name: "FileGrid", Component: FileGrid },
+  { name: "ImageTimeline", Component: ImageTimeline },
+  { name: "VideoSummary", Component: VideoSummary },
+  { name: "PlaylistExplorer", Component: PlaylistExplorer },
+  { name: "TrackBoard", Component: TrackBoard },
+  { name: "AlbumGrid", Component: AlbumGrid },
+  { name: "ArtistTimeline", Component: ArtistTimeline },
+  { name: "PodcastSummary", Component: PodcastSummary },
+  { name: "EpisodeExplorer", Component: EpisodeExplorer },
+  { name: "RecipeBoard", Component: RecipeBoard },
+  { name: "IngredientGrid", Component: IngredientGrid },
+  { name: "MenuTimeline", Component: MenuTimeline },
+  { name: "ReservationSummary", Component: ReservationSummary },
+  { name: "TableExplorer", Component: TableExplorer },
+  { name: "GuestBoard", Component: GuestBoard },
+  { name: "RoomGrid", Component: RoomGrid },
+  { name: "BookingTimeline", Component: BookingTimeline },
+  { name: "FlightSummary", Component: FlightSummary },
+  { name: "HotelExplorer", Component: HotelExplorer },
+  { name: "TripBoard", Component: TripBoard },
+  { name: "ExpenseGrid", Component: ExpenseGrid },
+  { name: "BudgetTimeline", Component: BudgetTimeline },
+  { name: "AccountSummary", Component: AccountSummary },
+  { name: "TransactionExplorer", Component: TransactionExplorer },
+  { name: "WalletBoard", Component: WalletBoard },
+  { name: "DeviceGrid", Component: DeviceGrid },
+  { name: "SensorTimeline", Component: SensorTimeline },
+  { name: "ReadingSummary", Component: ReadingSummary },
+  { name: "FirmwareExplorer", Component: FirmwareExplorer },
+  { name: "VehicleBoard", Component: VehicleBoard },
+  { name: "RouteGrid", Component: RouteGrid },
+  { name: "StopTimeline", Component: StopTimeline },
+  { name: "DriverSummary", Component: DriverSummary },
+  { name: "PatientExplorer", Component: PatientExplorer },
+  { name: "AppointmentBoard", Component: AppointmentBoard },
+  { name: "PrescriptionGrid", Component: PrescriptionGrid },
+  { name: "ClinicTimeline", Component: ClinicTimeline },
+  { name: "InventorySummary", Component: InventorySummary },
+  { name: "WarehouseExplorer", Component: WarehouseExplorer },
+  { name: "SupplierBoard", Component: SupplierBoard },
+  { name: "ContractGrid", Component: ContractGrid },
+  { name: "IssueTimeline", Component: IssueTimeline },
+  { name: "ReleaseSummary", Component: ReleaseSummary },
+  { name: "SprintExplorer", Component: SprintExplorer },
+  { name: "MilestoneBoard", Component: MilestoneBoard },
+  { name: "OrderStoreDemo", Component: OrderStoreDemo },
+  { name: "InvoiceStoreDemo", Component: InvoiceStoreDemo },
+  { name: "CustomerStoreDemo", Component: CustomerStoreDemo },
+  { name: "ProductStoreDemo", Component: ProductStoreDemo },
+  { name: "ShipmentStoreDemo", Component: ShipmentStoreDemo },
+  { name: "TicketStoreDemo", Component: TicketStoreDemo },
+  { name: "SessionStoreDemo", Component: SessionStoreDemo },
+  { name: "ProfileStoreDemo", Component: ProfileStoreDemo },
+  { name: "ProjectStoreDemo", Component: ProjectStoreDemo },
+  { name: "TaskStoreDemo", Component: TaskStoreDemo },
+  { name: "CommentStoreDemo", Component: CommentStoreDemo },
+  { name: "ReviewStoreDemo", Component: ReviewStoreDemo },
+  { name: "PaymentStoreDemo", Component: PaymentStoreDemo },
+  { name: "RefundStoreDemo", Component: RefundStoreDemo },
+  { name: "CouponStoreDemo", Component: CouponStoreDemo },
+  { name: "CartStoreDemo", Component: CartStoreDemo },
+  { name: "WishlistStoreDemo", Component: WishlistStoreDemo },
+  { name: "AlertStoreDemo", Component: AlertStoreDemo },
+  { name: "MetricStoreDemo", Component: MetricStoreDemo },
+  { name: "ReportStoreDemo", Component: ReportStoreDemo },
+  { name: "DashboardStoreDemo", Component: DashboardStoreDemo },
+  { name: "WidgetStoreDemo", Component: WidgetStoreDemo },
+  { name: "ChannelStoreDemo", Component: ChannelStoreDemo },
+  { name: "MessageStoreDemo", Component: MessageStoreDemo },
+  { name: "ThreadStoreDemo", Component: ThreadStoreDemo },
+  { name: "ContactStoreDemo", Component: ContactStoreDemo },
+  { name: "LeadStoreDemo", Component: LeadStoreDemo },
+  { name: "DealStoreDemo", Component: DealStoreDemo },
+  { name: "CampaignStoreDemo", Component: CampaignStoreDemo },
+  { name: "SegmentStoreDemo", Component: SegmentStoreDemo },
+  { name: "AudienceStoreDemo", Component: AudienceStoreDemo },
+  { name: "SurveyStoreDemo", Component: SurveyStoreDemo },
+  { name: "QuestionStoreDemo", Component: QuestionStoreDemo },
+  { name: "AnswerStoreDemo", Component: AnswerStoreDemo },
+  { name: "QuizStoreDemo", Component: QuizStoreDemo },
+  { name: "LessonStoreDemo", Component: LessonStoreDemo },
+  { name: "CourseStoreDemo", Component: CourseStoreDemo },
+  { name: "ModuleStoreDemo", Component: ModuleStoreDemo },
+  { name: "BadgeStoreDemo", Component: BadgeStoreDemo },
+  { name: "RewardStoreDemo", Component: RewardStoreDemo },
+  { name: "TeamStoreDemo", Component: TeamStoreDemo },
+  { name: "MemberStoreDemo", Component: MemberStoreDemo },
+  { name: "RoleStoreDemo", Component: RoleStoreDemo },
+  { name: "PermissionStoreDemo", Component: PermissionStoreDemo },
+  { name: "PolicyStoreDemo", Component: PolicyStoreDemo },
+  { name: "AuditStoreDemo", Component: AuditStoreDemo },
+  { name: "LogStoreDemo", Component: LogStoreDemo },
+  { name: "EventStoreDemo", Component: EventStoreDemo },
+  { name: "ScheduleStoreDemo", Component: ScheduleStoreDemo },
+  { name: "CalendarStoreDemo", Component: CalendarStoreDemo },
+  { name: "MeetingStoreDemo", Component: MeetingStoreDemo },
+  { name: "ReminderStoreDemo", Component: ReminderStoreDemo },
+  { name: "NoteStoreDemo", Component: NoteStoreDemo },
+  { name: "DocumentStoreDemo", Component: DocumentStoreDemo },
+  { name: "FolderStoreDemo", Component: FolderStoreDemo },
+  { name: "FileStoreDemo", Component: FileStoreDemo },
+  { name: "ImageStoreDemo", Component: ImageStoreDemo },
+  { name: "VideoStoreDemo", Component: VideoStoreDemo },
+  { name: "PlaylistStoreDemo", Component: PlaylistStoreDemo },
+  { name: "TrackStoreDemo", Component: TrackStoreDemo },
+  { name: "AlbumStoreDemo", Component: AlbumStoreDemo },
+  { name: "ArtistStoreDemo", Component: ArtistStoreDemo },
+  { name: "PodcastStoreDemo", Component: PodcastStoreDemo },
+  { name: "EpisodeStoreDemo", Component: EpisodeStoreDemo },
+  { name: "RecipeStoreDemo", Component: RecipeStoreDemo },
+  { name: "IngredientStoreDemo", Component: IngredientStoreDemo },
+  { name: "MenuStoreDemo", Component: MenuStoreDemo },
+  { name: "ReservationStoreDemo", Component: ReservationStoreDemo },
+  { name: "TableStoreDemo", Component: TableStoreDemo },
+  { name: "GuestStoreDemo", Component: GuestStoreDemo },
+  { name: "RoomStoreDemo", Component: RoomStoreDemo },
+  { name: "BookingStoreDemo", Component: BookingStoreDemo },
+  { name: "FlightStoreDemo", Component: FlightStoreDemo },
+  { name: "HotelStoreDemo", Component: HotelStoreDemo },
+  { name: "TripStoreDemo", Component: TripStoreDemo },
+  { name: "ExpenseStoreDemo", Component: ExpenseStoreDemo },
+  { name: "BudgetStoreDemo", Component: BudgetStoreDemo },
+  { name: "AccountStoreDemo", Component: AccountStoreDemo },
+  { name: "TransactionStoreDemo", Component: TransactionStoreDemo },
+  { name: "WalletStoreDemo", Component: WalletStoreDemo },
+  { name: "DeviceStoreDemo", Component: DeviceStoreDemo },
+  { name: "SensorStoreDemo", Component: SensorStoreDemo },
+  { name: "ReadingStoreDemo", Component: ReadingStoreDemo },
+  { name: "FirmwareStoreDemo", Component: FirmwareStoreDemo },
+  { name: "VehicleStoreDemo", Component: VehicleStoreDemo },
+  { name: "RouteStoreDemo", Component: RouteStoreDemo },
+  { name: "StopStoreDemo", Component: StopStoreDemo },
+  { name: "DriverStoreDemo", Component: DriverStoreDemo },
+  { name: "PatientStoreDemo", Component: PatientStoreDemo },
+  { name: "AppointmentStoreDemo", Component: AppointmentStoreDemo },
+  { name: "PrescriptionStoreDemo", Component: PrescriptionStoreDemo },
+  { name: "ClinicStoreDemo", Component: ClinicStoreDemo },
+  { name: "InventoryStoreDemo", Component: InventoryStoreDemo },
+  { name: "WarehouseStoreDemo", Component: WarehouseStoreDemo },
+  { name: "SupplierStoreDemo", Component: SupplierStoreDemo },
+  { name: "ContractStoreDemo", Component: ContractStoreDemo },
+  { name: "IssueStoreDemo", Component: IssueStoreDemo },
+  { name: "ReleaseStoreDemo", Component: ReleaseStoreDemo },
+  { name: "SprintStoreDemo", Component: SprintStoreDemo },
+  { name: "MilestoneStoreDemo", Component: MilestoneStoreDemo },
+  { name: "OrderDialog", Component: OrderDialog },
+  { name: "InvoiceDialog", Component: InvoiceDialog },
+  { name: "CustomerDialog", Component: CustomerDialog },
+  { name: "ProductDialog", Component: ProductDialog },
+  { name: "ShipmentDialog", Component: ShipmentDialog },
+  { name: "TicketDialog", Component: TicketDialog },
+  { name: "SessionDialog", Component: SessionDialog },
+  { name: "ProfileDialog", Component: ProfileDialog },
+  { name: "ProjectDialog", Component: ProjectDialog },
+  { name: "TaskDialog", Component: TaskDialog },
+  { name: "CommentDialog", Component: CommentDialog },
+  { name: "ReviewDialog", Component: ReviewDialog },
+  { name: "PaymentDialog", Component: PaymentDialog },
+  { name: "RefundDialog", Component: RefundDialog },
+  { name: "CouponDialog", Component: CouponDialog },
+  { name: "CartDialog", Component: CartDialog },
+  { name: "WishlistDialog", Component: WishlistDialog },
+  { name: "AlertDialog", Component: AlertDialog },
+  { name: "MetricDialog", Component: MetricDialog },
+  { name: "ReportDialog", Component: ReportDialog },
+  { name: "DashboardDialog", Component: DashboardDialog },
+  { name: "WidgetDialog", Component: WidgetDialog },
+  { name: "ChannelDialog", Component: ChannelDialog },
+  { name: "MessageDialog", Component: MessageDialog },
+  { name: "ThreadDialog", Component: ThreadDialog },
+  { name: "ContactDialog", Component: ContactDialog },
+  { name: "LeadDialog", Component: LeadDialog },
+  { name: "DealDialog", Component: DealDialog },
+  { name: "CampaignDialog", Component: CampaignDialog },
+  { name: "SegmentDialog", Component: SegmentDialog },
+  { name: "AudienceDialog", Component: AudienceDialog },
+  { name: "SurveyDialog", Component: SurveyDialog },
+  { name: "QuestionDialog", Component: QuestionDialog },
+  { name: "AnswerDialog", Component: AnswerDialog },
+  { name: "QuizDialog", Component: QuizDialog },
+  { name: "LessonDialog", Component: LessonDialog },
+  { name: "CourseDialog", Component: CourseDialog },
+  { name: "ModuleDialog", Component: ModuleDialog },
+  { name: "BadgeDialog", Component: BadgeDialog },
+  { name: "RewardDialog", Component: RewardDialog },
+  { name: "TeamDialog", Component: TeamDialog },
+  { name: "MemberDialog", Component: MemberDialog },
+  { name: "RoleDialog", Component: RoleDialog },
+  { name: "PermissionDialog", Component: PermissionDialog },
+  { name: "PolicyDialog", Component: PolicyDialog },
+  { name: "AuditDialog", Component: AuditDialog },
+  { name: "LogDialog", Component: LogDialog },
+  { name: "EventDialog", Component: EventDialog },
+  { name: "ScheduleDialog", Component: ScheduleDialog },
+  { name: "CalendarDialog", Component: CalendarDialog },
+  { name: "MeetingDialog", Component: MeetingDialog },
+  { name: "ReminderDialog", Component: ReminderDialog },
+  { name: "NoteDialog", Component: NoteDialog },
+  { name: "DocumentDialog", Component: DocumentDialog },
+  { name: "FolderDialog", Component: FolderDialog },
+  { name: "FileDialog", Component: FileDialog },
+  { name: "ImageDialog", Component: ImageDialog },
+  { name: "VideoDialog", Component: VideoDialog },
+  { name: "PlaylistDialog", Component: PlaylistDialog },
+  { name: "TrackDialog", Component: TrackDialog },
+  { name: "AlbumDialog", Component: AlbumDialog },
+  { name: "ArtistDialog", Component: ArtistDialog },
+  { name: "PodcastDialog", Component: PodcastDialog },
+  { name: "EpisodeDialog", Component: EpisodeDialog },
+  { name: "RecipeDialog", Component: RecipeDialog },
+  { name: "IngredientDialog", Component: IngredientDialog },
+  { name: "MenuDialog", Component: MenuDialog },
+  { name: "ReservationDialog", Component: ReservationDialog },
+  { name: "TableDialog", Component: TableDialog },
+  { name: "GuestDialog", Component: GuestDialog },
+  { name: "RoomDialog", Component: RoomDialog },
+  { name: "BookingDialog", Component: BookingDialog },
+  { name: "FlightDialog", Component: FlightDialog },
+  { name: "HotelDialog", Component: HotelDialog },
+  { name: "TripDialog", Component: TripDialog },
+  { name: "ExpenseDialog", Component: ExpenseDialog },
+  { name: "BudgetDialog", Component: BudgetDialog },
+  { name: "AccountDialog", Component: AccountDialog },
+  { name: "TransactionDialog", Component: TransactionDialog },
+  { name: "WalletDialog", Component: WalletDialog },
+  { name: "DeviceDialog", Component: DeviceDialog },
+  { name: "SensorDialog", Component: SensorDialog },
+  { name: "ReadingDialog", Component: ReadingDialog },
+  { name: "FirmwareDialog", Component: FirmwareDialog },
+  { name: "VehicleDialog", Component: VehicleDialog },
+  { name: "RouteDialog", Component: RouteDialog },
+  { name: "StopDialog", Component: StopDialog },
+  { name: "DriverDialog", Component: DriverDialog },
+  { name: "PatientDialog", Component: PatientDialog },
+  { name: "AppointmentDialog", Component: AppointmentDialog },
+  { name: "PrescriptionDialog", Component: PrescriptionDialog },
+  { name: "ClinicDialog", Component: ClinicDialog },
+  { name: "InventoryDialog", Component: InventoryDialog },
+  { name: "WarehouseDialog", Component: WarehouseDialog },
+  { name: "SupplierDialog", Component: SupplierDialog },
+  { name: "ContractDialog", Component: ContractDialog },
+  { name: "IssueDialog", Component: IssueDialog },
+  { name: "ReleaseDialog", Component: ReleaseDialog },
+  { name: "SprintDialog", Component: SprintDialog },
+  { name: "MilestoneDialog", Component: MilestoneDialog },
+  { name: "OrderChart", Component: OrderChart },
+  { name: "InvoiceChart", Component: InvoiceChart },
+  { name: "CustomerChart", Component: CustomerChart },
+  { name: "ProductChart", Component: ProductChart },
+  { name: "ShipmentChart", Component: ShipmentChart },
+  { name: "TicketChart", Component: TicketChart },
+  { name: "SessionChart", Component: SessionChart },
+  { name: "ProfileChart", Component: ProfileChart },
+  { name: "ProjectChart", Component: ProjectChart },
+  { name: "TaskChart", Component: TaskChart },
+  { name: "CommentChart", Component: CommentChart },
+  { name: "ReviewChart", Component: ReviewChart },
+  { name: "PaymentChart", Component: PaymentChart },
+  { name: "RefundChart", Component: RefundChart },
+  { name: "CouponChart", Component: CouponChart },
+  { name: "CartChart", Component: CartChart },
+  { name: "WishlistChart", Component: WishlistChart },
+  { name: "AlertChart", Component: AlertChart },
+  { name: "MetricChart", Component: MetricChart },
+  { name: "ReportChart", Component: ReportChart },
+  { name: "DashboardChart", Component: DashboardChart },
+  { name: "WidgetChart", Component: WidgetChart },
+  { name: "ChannelChart", Component: ChannelChart },
+  { name: "MessageChart", Component: MessageChart },
+  { name: "ThreadChart", Component: ThreadChart },
+  { name: "ContactChart", Component: ContactChart },
+  { name: "LeadChart", Component: LeadChart },
+  { name: "DealChart", Component: DealChart },
+  { name: "CampaignChart", Component: CampaignChart },
+  { name: "SegmentChart", Component: SegmentChart },
+  { name: "AudienceChart", Component: AudienceChart },
+  { name: "SurveyChart", Component: SurveyChart },
+  { name: "QuestionChart", Component: QuestionChart },
+  { name: "AnswerChart", Component: AnswerChart },
+  { name: "QuizChart", Component: QuizChart },
+  { name: "LessonChart", Component: LessonChart },
+  { name: "CourseChart", Component: CourseChart },
+  { name: "ModuleChart", Component: ModuleChart },
+  { name: "BadgeChart", Component: BadgeChart },
+  { name: "RewardChart", Component: RewardChart },
+  { name: "TeamChart", Component: TeamChart },
+  { name: "MemberChart", Component: MemberChart },
+  { name: "RoleChart", Component: RoleChart },
+  { name: "PermissionChart", Component: PermissionChart },
+  { name: "PolicyChart", Component: PolicyChart },
+  { name: "AuditChart", Component: AuditChart },
+  { name: "LogChart", Component: LogChart },
+  { name: "EventChart", Component: EventChart },
+  { name: "ScheduleChart", Component: ScheduleChart },
+  { name: "CalendarChart", Component: CalendarChart },
+  { name: "MeetingChart", Component: MeetingChart },
+  { name: "ReminderChart", Component: ReminderChart },
+  { name: "NoteChart", Component: NoteChart },
+  { name: "DocumentChart", Component: DocumentChart },
+  { name: "FolderChart", Component: FolderChart },
+  { name: "FileChart", Component: FileChart },
+  { name: "ImageChart", Component: ImageChart },
+  { name: "VideoChart", Component: VideoChart },
+  { name: "PlaylistChart", Component: PlaylistChart },
+  { name: "TrackChart", Component: TrackChart },
+  { name: "AlbumChart", Component: AlbumChart },
+  { name: "ArtistChart", Component: ArtistChart },
+  { name: "PodcastChart", Component: PodcastChart },
+  { name: "EpisodeChart", Component: EpisodeChart },
+  { name: "RecipeChart", Component: RecipeChart },
+  { name: "IngredientChart", Component: IngredientChart },
+  { name: "MenuChart", Component: MenuChart },
+  { name: "ReservationChart", Component: ReservationChart },
+  { name: "TableChart", Component: TableChart },
+  { name: "GuestChart", Component: GuestChart },
+  { name: "RoomChart", Component: RoomChart },
+  { name: "BookingChart", Component: BookingChart },
+  { name: "FlightChart", Component: FlightChart },
+  { name: "HotelChart", Component: HotelChart },
+  { name: "TripChart", Component: TripChart },
+  { name: "ExpenseChart", Component: ExpenseChart },
+  { name: "BudgetChart", Component: BudgetChart },
+  { name: "AccountChart", Component: AccountChart },
+  { name: "TransactionChart", Component: TransactionChart },
+  { name: "WalletChart", Component: WalletChart },
+  { name: "DeviceChart", Component: DeviceChart },
+  { name: "SensorChart", Component: SensorChart },
+  { name: "ReadingChart", Component: ReadingChart },
+  { name: "FirmwareChart", Component: FirmwareChart },
+  { name: "VehicleChart", Component: VehicleChart },
+  { name: "RouteChart", Component: RouteChart },
+  { name: "StopChart", Component: StopChart },
+  { name: "DriverChart", Component: DriverChart },
+  { name: "PatientChart", Component: PatientChart },
+  { name: "AppointmentChart", Component: AppointmentChart },
+  { name: "PrescriptionChart", Component: PrescriptionChart },
+  { name: "ClinicChart", Component: ClinicChart },
+  { name: "InventoryChart", Component: InventoryChart },
+  { name: "WarehouseChart", Component: WarehouseChart },
+  { name: "SupplierChart", Component: SupplierChart },
+  { name: "ContractChart", Component: ContractChart },
+  { name: "IssueChart", Component: IssueChart },
+  { name: "ReleaseChart", Component: ReleaseChart },
+  { name: "SprintChart", Component: SprintChart },
+  { name: "MilestoneChart", Component: MilestoneChart },
+  { name: "OrderFilter", Component: OrderFilter },
+  { name: "InvoiceFilter", Component: InvoiceFilter },
+  { name: "CustomerFilter", Component: CustomerFilter },
+  { name: "ProductFilter", Component: ProductFilter },
+  { name: "ShipmentFilter", Component: ShipmentFilter },
+  { name: "TicketFilter", Component: TicketFilter },
+  { name: "SessionFilter", Component: SessionFilter },
+  { name: "ProfileFilter", Component: ProfileFilter },
+  { name: "ProjectFilter", Component: ProjectFilter },
+  { name: "TaskFilter", Component: TaskFilter },
+  { name: "CommentFilter", Component: CommentFilter },
+  { name: "ReviewFilter", Component: ReviewFilter },
+  { name: "PaymentFilter", Component: PaymentFilter },
+  { name: "RefundFilter", Component: RefundFilter },
+  { name: "CouponFilter", Component: CouponFilter },
+  { name: "CartFilter", Component: CartFilter },
+  { name: "WishlistFilter", Component: WishlistFilter },
+  { name: "AlertFilter", Component: AlertFilter },
+  { name: "MetricFilter", Component: MetricFilter },
+  { name: "ReportFilter", Component: ReportFilter },
+  { name: "DashboardFilter", Component: DashboardFilter },
+  { name: "WidgetFilter", Component: WidgetFilter },
+  { name: "ChannelFilter", Component: ChannelFilter },
+  { name: "MessageFilter", Component: MessageFilter },
+  { name: "ThreadFilter", Component: ThreadFilter },
+  { name: "ContactFilter", Component: ContactFilter },
+  { name: "LeadFilter", Component: LeadFilter },
+  { name: "DealFilter", Component: DealFilter },
+  { name: "CampaignFilter", Component: CampaignFilter },
+  { name: "SegmentFilter", Component: SegmentFilter },
+  { name: "AudienceFilter", Component: AudienceFilter },
+  { name: "SurveyFilter", Component: SurveyFilter },
+  { name: "QuestionFilter", Component: QuestionFilter },
+  { name: "AnswerFilter", Component: AnswerFilter },
+  { name: "QuizFilter", Component: QuizFilter },
+  { name: "LessonFilter", Component: LessonFilter },
+  { name: "CourseFilter", Component: CourseFilter },
+  { name: "ModuleFilter", Component: ModuleFilter },
+  { name: "BadgeFilter", Component: BadgeFilter },
+  { name: "RewardFilter", Component: RewardFilter },
+  { name: "TeamFilter", Component: TeamFilter },
+  { name: "MemberFilter", Component: MemberFilter },
+  { name: "RoleFilter", Component: RoleFilter },
+  { name: "PermissionFilter", Component: PermissionFilter },
+  { name: "PolicyFilter", Component: PolicyFilter },
+  { name: "AuditFilter", Component: AuditFilter },
+  { name: "LogFilter", Component: LogFilter },
+  { name: "EventFilter", Component: EventFilter },
+  { name: "ScheduleFilter", Component: ScheduleFilter },
+  { name: "CalendarFilter", Component: CalendarFilter },
+  { name: "MeetingFilter", Component: MeetingFilter },
+  { name: "ReminderFilter", Component: ReminderFilter },
+  { name: "NoteFilter", Component: NoteFilter },
+  { name: "DocumentFilter", Component: DocumentFilter },
+  { name: "FolderFilter", Component: FolderFilter },
+  { name: "FileFilter", Component: FileFilter },
+  { name: "ImageFilter", Component: ImageFilter },
+  { name: "VideoFilter", Component: VideoFilter },
+  { name: "PlaylistFilter", Component: PlaylistFilter },
+  { name: "TrackFilter", Component: TrackFilter },
+  { name: "AlbumFilter", Component: AlbumFilter },
+  { name: "ArtistFilter", Component: ArtistFilter },
+  { name: "PodcastFilter", Component: PodcastFilter },
+  { name: "EpisodeFilter", Component: EpisodeFilter },
+  { name: "RecipeFilter", Component: RecipeFilter },
+  { name: "IngredientFilter", Component: IngredientFilter },
+  { name: "MenuFilter", Component: MenuFilter },
+  { name: "ReservationFilter", Component: ReservationFilter },
+  { name: "TableFilter", Component: TableFilter },
+  { name: "GuestFilter", Component: GuestFilter },
+  { name: "RoomFilter", Component: RoomFilter },
+  { name: "BookingFilter", Component: BookingFilter },
+  { name: "FlightFilter", Component: FlightFilter },
+  { name: "HotelFilter", Component: HotelFilter },
+  { name: "TripFilter", Component: TripFilter },
+  { name: "ExpenseFilter", Component: ExpenseFilter },
+  { name: "BudgetFilter", Component: BudgetFilter },
+  { name: "AccountFilter", Component: AccountFilter },
+  { name: "TransactionFilter", Component: TransactionFilter },
+  { name: "WalletFilter", Component: WalletFilter },
+  { name: "DeviceFilter", Component: DeviceFilter },
+  { name: "SensorFilter", Component: SensorFilter },
+  { name: "ReadingFilter", Component: ReadingFilter },
+  { name: "FirmwareFilter", Component: FirmwareFilter },
+  { name: "VehicleFilter", Component: VehicleFilter },
+  { name: "RouteFilter", Component: RouteFilter },
+  { name: "StopFilter", Component: StopFilter },
+  { name: "DriverFilter", Component: DriverFilter },
+  { name: "PatientFilter", Component: PatientFilter },
+  { name: "AppointmentFilter", Component: AppointmentFilter },
+  { name: "PrescriptionFilter", Component: PrescriptionFilter },
+  { name: "ClinicFilter", Component: ClinicFilter },
+  { name: "InventoryFilter", Component: InventoryFilter },
+  { name: "WarehouseFilter", Component: WarehouseFilter },
+  { name: "SupplierFilter", Component: SupplierFilter },
+  { name: "ContractFilter", Component: ContractFilter },
+  { name: "IssueFilter", Component: IssueFilter },
+  { name: "ReleaseFilter", Component: ReleaseFilter },
+  { name: "SprintFilter", Component: SprintFilter },
+  { name: "MilestoneFilter", Component: MilestoneFilter },
+  { name: "OrderStats", Component: OrderStats },
+  { name: "InvoiceStats", Component: InvoiceStats },
+  { name: "CustomerStats", Component: CustomerStats },
+  { name: "ProductStats", Component: ProductStats },
+  { name: "ShipmentStats", Component: ShipmentStats },
+  { name: "TicketStats", Component: TicketStats },
+  { name: "SessionStats", Component: SessionStats },
+  { name: "ProfileStats", Component: ProfileStats },
+  { name: "ProjectStats", Component: ProjectStats },
+  { name: "TaskStats", Component: TaskStats },
+  { name: "CommentStats", Component: CommentStats },
+  { name: "ReviewStats", Component: ReviewStats },
+  { name: "PaymentStats", Component: PaymentStats },
+  { name: "RefundStats", Component: RefundStats },
+  { name: "CouponStats", Component: CouponStats },
+  { name: "CartStats", Component: CartStats },
+  { name: "WishlistStats", Component: WishlistStats },
+  { name: "AlertStats", Component: AlertStats },
+  { name: "MetricStats", Component: MetricStats },
+  { name: "ReportStats", Component: ReportStats },
+  { name: "DashboardStats", Component: DashboardStats },
+  { name: "WidgetStats", Component: WidgetStats },
+  { name: "ChannelStats", Component: ChannelStats },
+  { name: "MessageStats", Component: MessageStats },
+  { name: "ThreadStats", Component: ThreadStats },
+  { name: "ContactStats", Component: ContactStats },
+  { name: "LeadStats", Component: LeadStats },
+  { name: "DealStats", Component: DealStats },
+  { name: "CampaignStats", Component: CampaignStats },
+  { name: "SegmentStats", Component: SegmentStats },
+  { name: "AudienceStats", Component: AudienceStats },
+  { name: "SurveyStats", Component: SurveyStats },
+  { name: "QuestionStats", Component: QuestionStats },
+  { name: "AnswerStats", Component: AnswerStats },
+  { name: "QuizStats", Component: QuizStats },
+  { name: "LessonStats", Component: LessonStats },
+  { name: "CourseStats", Component: CourseStats },
+  { name: "ModuleStats", Component: ModuleStats },
+  { name: "BadgeStats", Component: BadgeStats },
+  { name: "RewardStats", Component: RewardStats },
+  { name: "TeamStats", Component: TeamStats },
+  { name: "MemberStats", Component: MemberStats },
+  { name: "RoleStats", Component: RoleStats },
+  { name: "PermissionStats", Component: PermissionStats },
+  { name: "PolicyStats", Component: PolicyStats },
+  { name: "AuditStats", Component: AuditStats },
+  { name: "LogStats", Component: LogStats },
+  { name: "EventStats", Component: EventStats },
+  { name: "ScheduleStats", Component: ScheduleStats },
+  { name: "CalendarStats", Component: CalendarStats },
+  { name: "MeetingStats", Component: MeetingStats },
+  { name: "ReminderStats", Component: ReminderStats },
+  { name: "NoteStats", Component: NoteStats },
+  { name: "DocumentStats", Component: DocumentStats },
+  { name: "FolderStats", Component: FolderStats },
+  { name: "FileStats", Component: FileStats },
+  { name: "ImageStats", Component: ImageStats },
+  { name: "VideoStats", Component: VideoStats },
+  { name: "PlaylistStats", Component: PlaylistStats },
+  { name: "TrackStats", Component: TrackStats },
+  { name: "AlbumStats", Component: AlbumStats },
+  { name: "ArtistStats", Component: ArtistStats },
+  { name: "PodcastStats", Component: PodcastStats },
+  { name: "EpisodeStats", Component: EpisodeStats },
+  { name: "RecipeStats", Component: RecipeStats },
+  { name: "IngredientStats", Component: IngredientStats },
+  { name: "MenuStats", Component: MenuStats },
+  { name: "ReservationStats", Component: ReservationStats },
+  { name: "TableStats", Component: TableStats },
+  { name: "GuestStats", Component: GuestStats },
+  { name: "RoomStats", Component: RoomStats },
+  { name: "BookingStats", Component: BookingStats },
+  { name: "FlightStats", Component: FlightStats },
+  { name: "HotelStats", Component: HotelStats },
+  { name: "TripStats", Component: TripStats },
+  { name: "ExpenseStats", Component: ExpenseStats },
+  { name: "BudgetStats", Component: BudgetStats },
+  { name: "AccountStats", Component: AccountStats },
+  { name: "TransactionStats", Component: TransactionStats },
+  { name: "WalletStats", Component: WalletStats },
+  { name: "DeviceStats", Component: DeviceStats },
+  { name: "SensorStats", Component: SensorStats },
+  { name: "ReadingStats", Component: ReadingStats },
+  { name: "FirmwareStats", Component: FirmwareStats },
+  { name: "VehicleStats", Component: VehicleStats },
+  { name: "RouteStats", Component: RouteStats },
+  { name: "StopStats", Component: StopStats },
+  { name: "DriverStats", Component: DriverStats },
+  { name: "PatientStats", Component: PatientStats },
+  { name: "AppointmentStats", Component: AppointmentStats },
+  { name: "PrescriptionStats", Component: PrescriptionStats },
+  { name: "ClinicStats", Component: ClinicStats },
+  { name: "InventoryStats", Component: InventoryStats },
+  { name: "WarehouseStats", Component: WarehouseStats },
+  { name: "SupplierStats", Component: SupplierStats },
+  { name: "ContractStats", Component: ContractStats },
+  { name: "IssueStats", Component: IssueStats },
+  { name: "ReleaseStats", Component: ReleaseStats },
+  { name: "SprintStats", Component: SprintStats },
+  { name: "MilestoneStats", Component: MilestoneStats },
 ];
 
 export function App() {
