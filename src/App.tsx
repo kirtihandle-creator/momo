@@ -99,6 +99,106 @@ import { IssueList } from "./components/IssueList";
 import { ReleasePanel } from "./components/ReleasePanel";
 import { SprintForm } from "./components/SprintForm";
 import { MilestoneTable } from "./components/MilestoneTable";
+import { OrderEditor } from "./editors/OrderEditor";
+import { InvoiceSettings } from "./editors/InvoiceSettings";
+import { CustomerWizard } from "./editors/CustomerWizard";
+import { ProductDetails } from "./editors/ProductDetails";
+import { ShipmentPreview } from "./editors/ShipmentPreview";
+import { TicketEditor } from "./editors/TicketEditor";
+import { SessionSettings } from "./editors/SessionSettings";
+import { ProfileWizard } from "./editors/ProfileWizard";
+import { ProjectDetails } from "./editors/ProjectDetails";
+import { TaskPreview } from "./editors/TaskPreview";
+import { CommentEditor } from "./editors/CommentEditor";
+import { ReviewSettings } from "./editors/ReviewSettings";
+import { PaymentWizard } from "./editors/PaymentWizard";
+import { RefundDetails } from "./editors/RefundDetails";
+import { CouponPreview } from "./editors/CouponPreview";
+import { CartEditor } from "./editors/CartEditor";
+import { WishlistSettings } from "./editors/WishlistSettings";
+import { AlertWizard } from "./editors/AlertWizard";
+import { MetricDetails } from "./editors/MetricDetails";
+import { ReportPreview } from "./editors/ReportPreview";
+import { DashboardEditor } from "./editors/DashboardEditor";
+import { WidgetSettings } from "./editors/WidgetSettings";
+import { ChannelWizard } from "./editors/ChannelWizard";
+import { MessageDetails } from "./editors/MessageDetails";
+import { ThreadPreview } from "./editors/ThreadPreview";
+import { ContactEditor } from "./editors/ContactEditor";
+import { LeadSettings } from "./editors/LeadSettings";
+import { DealWizard } from "./editors/DealWizard";
+import { CampaignDetails } from "./editors/CampaignDetails";
+import { SegmentPreview } from "./editors/SegmentPreview";
+import { AudienceEditor } from "./editors/AudienceEditor";
+import { SurveySettings } from "./editors/SurveySettings";
+import { QuestionWizard } from "./editors/QuestionWizard";
+import { AnswerDetails } from "./editors/AnswerDetails";
+import { QuizPreview } from "./editors/QuizPreview";
+import { LessonEditor } from "./editors/LessonEditor";
+import { CourseSettings } from "./editors/CourseSettings";
+import { ModuleWizard } from "./editors/ModuleWizard";
+import { BadgeDetails } from "./editors/BadgeDetails";
+import { RewardPreview } from "./editors/RewardPreview";
+import { TeamEditor } from "./editors/TeamEditor";
+import { MemberSettings } from "./editors/MemberSettings";
+import { RoleWizard } from "./editors/RoleWizard";
+import { PermissionDetails } from "./editors/PermissionDetails";
+import { PolicyPreview } from "./editors/PolicyPreview";
+import { AuditEditor } from "./editors/AuditEditor";
+import { LogSettings } from "./editors/LogSettings";
+import { EventWizard } from "./editors/EventWizard";
+import { ScheduleDetails } from "./editors/ScheduleDetails";
+import { CalendarPreview } from "./editors/CalendarPreview";
+import { MeetingEditor } from "./editors/MeetingEditor";
+import { ReminderSettings } from "./editors/ReminderSettings";
+import { NoteWizard } from "./editors/NoteWizard";
+import { DocumentDetails } from "./editors/DocumentDetails";
+import { FolderPreview } from "./editors/FolderPreview";
+import { FileEditor } from "./editors/FileEditor";
+import { ImageSettings } from "./editors/ImageSettings";
+import { VideoWizard } from "./editors/VideoWizard";
+import { PlaylistDetails } from "./editors/PlaylistDetails";
+import { TrackPreview } from "./editors/TrackPreview";
+import { AlbumEditor } from "./editors/AlbumEditor";
+import { ArtistSettings } from "./editors/ArtistSettings";
+import { PodcastWizard } from "./editors/PodcastWizard";
+import { EpisodeDetails } from "./editors/EpisodeDetails";
+import { RecipePreview } from "./editors/RecipePreview";
+import { IngredientEditor } from "./editors/IngredientEditor";
+import { MenuSettings } from "./editors/MenuSettings";
+import { ReservationWizard } from "./editors/ReservationWizard";
+import { TableDetails } from "./editors/TableDetails";
+import { GuestPreview } from "./editors/GuestPreview";
+import { RoomEditor } from "./editors/RoomEditor";
+import { BookingSettings } from "./editors/BookingSettings";
+import { FlightWizard } from "./editors/FlightWizard";
+import { HotelDetails } from "./editors/HotelDetails";
+import { TripPreview } from "./editors/TripPreview";
+import { ExpenseEditor } from "./editors/ExpenseEditor";
+import { BudgetSettings } from "./editors/BudgetSettings";
+import { AccountWizard } from "./editors/AccountWizard";
+import { TransactionDetails } from "./editors/TransactionDetails";
+import { WalletPreview } from "./editors/WalletPreview";
+import { DeviceEditor } from "./editors/DeviceEditor";
+import { SensorSettings } from "./editors/SensorSettings";
+import { ReadingWizard } from "./editors/ReadingWizard";
+import { FirmwareDetails } from "./editors/FirmwareDetails";
+import { VehiclePreview } from "./editors/VehiclePreview";
+import { RouteEditor } from "./editors/RouteEditor";
+import { StopSettings } from "./editors/StopSettings";
+import { DriverWizard } from "./editors/DriverWizard";
+import { PatientDetails } from "./editors/PatientDetails";
+import { AppointmentPreview } from "./editors/AppointmentPreview";
+import { PrescriptionEditor } from "./editors/PrescriptionEditor";
+import { ClinicSettings } from "./editors/ClinicSettings";
+import { InventoryWizard } from "./editors/InventoryWizard";
+import { WarehouseDetails } from "./editors/WarehouseDetails";
+import { SupplierPreview } from "./editors/SupplierPreview";
+import { ContractEditor } from "./editors/ContractEditor";
+import { IssueSettings } from "./editors/IssueSettings";
+import { ReleaseWizard } from "./editors/ReleaseWizard";
+import { SprintDetails } from "./editors/SprintDetails";
+import { MilestonePreview } from "./editors/MilestonePreview";
 
 const widgets = [
   { name: "OrderCard", Component: OrderCard },
@@ -201,6 +301,106 @@ const widgets = [
   { name: "ReleasePanel", Component: ReleasePanel },
   { name: "SprintForm", Component: SprintForm },
   { name: "MilestoneTable", Component: MilestoneTable },
+  { name: "OrderEditor", Component: OrderEditor },
+  { name: "InvoiceSettings", Component: InvoiceSettings },
+  { name: "CustomerWizard", Component: CustomerWizard },
+  { name: "ProductDetails", Component: ProductDetails },
+  { name: "ShipmentPreview", Component: ShipmentPreview },
+  { name: "TicketEditor", Component: TicketEditor },
+  { name: "SessionSettings", Component: SessionSettings },
+  { name: "ProfileWizard", Component: ProfileWizard },
+  { name: "ProjectDetails", Component: ProjectDetails },
+  { name: "TaskPreview", Component: TaskPreview },
+  { name: "CommentEditor", Component: CommentEditor },
+  { name: "ReviewSettings", Component: ReviewSettings },
+  { name: "PaymentWizard", Component: PaymentWizard },
+  { name: "RefundDetails", Component: RefundDetails },
+  { name: "CouponPreview", Component: CouponPreview },
+  { name: "CartEditor", Component: CartEditor },
+  { name: "WishlistSettings", Component: WishlistSettings },
+  { name: "AlertWizard", Component: AlertWizard },
+  { name: "MetricDetails", Component: MetricDetails },
+  { name: "ReportPreview", Component: ReportPreview },
+  { name: "DashboardEditor", Component: DashboardEditor },
+  { name: "WidgetSettings", Component: WidgetSettings },
+  { name: "ChannelWizard", Component: ChannelWizard },
+  { name: "MessageDetails", Component: MessageDetails },
+  { name: "ThreadPreview", Component: ThreadPreview },
+  { name: "ContactEditor", Component: ContactEditor },
+  { name: "LeadSettings", Component: LeadSettings },
+  { name: "DealWizard", Component: DealWizard },
+  { name: "CampaignDetails", Component: CampaignDetails },
+  { name: "SegmentPreview", Component: SegmentPreview },
+  { name: "AudienceEditor", Component: AudienceEditor },
+  { name: "SurveySettings", Component: SurveySettings },
+  { name: "QuestionWizard", Component: QuestionWizard },
+  { name: "AnswerDetails", Component: AnswerDetails },
+  { name: "QuizPreview", Component: QuizPreview },
+  { name: "LessonEditor", Component: LessonEditor },
+  { name: "CourseSettings", Component: CourseSettings },
+  { name: "ModuleWizard", Component: ModuleWizard },
+  { name: "BadgeDetails", Component: BadgeDetails },
+  { name: "RewardPreview", Component: RewardPreview },
+  { name: "TeamEditor", Component: TeamEditor },
+  { name: "MemberSettings", Component: MemberSettings },
+  { name: "RoleWizard", Component: RoleWizard },
+  { name: "PermissionDetails", Component: PermissionDetails },
+  { name: "PolicyPreview", Component: PolicyPreview },
+  { name: "AuditEditor", Component: AuditEditor },
+  { name: "LogSettings", Component: LogSettings },
+  { name: "EventWizard", Component: EventWizard },
+  { name: "ScheduleDetails", Component: ScheduleDetails },
+  { name: "CalendarPreview", Component: CalendarPreview },
+  { name: "MeetingEditor", Component: MeetingEditor },
+  { name: "ReminderSettings", Component: ReminderSettings },
+  { name: "NoteWizard", Component: NoteWizard },
+  { name: "DocumentDetails", Component: DocumentDetails },
+  { name: "FolderPreview", Component: FolderPreview },
+  { name: "FileEditor", Component: FileEditor },
+  { name: "ImageSettings", Component: ImageSettings },
+  { name: "VideoWizard", Component: VideoWizard },
+  { name: "PlaylistDetails", Component: PlaylistDetails },
+  { name: "TrackPreview", Component: TrackPreview },
+  { name: "AlbumEditor", Component: AlbumEditor },
+  { name: "ArtistSettings", Component: ArtistSettings },
+  { name: "PodcastWizard", Component: PodcastWizard },
+  { name: "EpisodeDetails", Component: EpisodeDetails },
+  { name: "RecipePreview", Component: RecipePreview },
+  { name: "IngredientEditor", Component: IngredientEditor },
+  { name: "MenuSettings", Component: MenuSettings },
+  { name: "ReservationWizard", Component: ReservationWizard },
+  { name: "TableDetails", Component: TableDetails },
+  { name: "GuestPreview", Component: GuestPreview },
+  { name: "RoomEditor", Component: RoomEditor },
+  { name: "BookingSettings", Component: BookingSettings },
+  { name: "FlightWizard", Component: FlightWizard },
+  { name: "HotelDetails", Component: HotelDetails },
+  { name: "TripPreview", Component: TripPreview },
+  { name: "ExpenseEditor", Component: ExpenseEditor },
+  { name: "BudgetSettings", Component: BudgetSettings },
+  { name: "AccountWizard", Component: AccountWizard },
+  { name: "TransactionDetails", Component: TransactionDetails },
+  { name: "WalletPreview", Component: WalletPreview },
+  { name: "DeviceEditor", Component: DeviceEditor },
+  { name: "SensorSettings", Component: SensorSettings },
+  { name: "ReadingWizard", Component: ReadingWizard },
+  { name: "FirmwareDetails", Component: FirmwareDetails },
+  { name: "VehiclePreview", Component: VehiclePreview },
+  { name: "RouteEditor", Component: RouteEditor },
+  { name: "StopSettings", Component: StopSettings },
+  { name: "DriverWizard", Component: DriverWizard },
+  { name: "PatientDetails", Component: PatientDetails },
+  { name: "AppointmentPreview", Component: AppointmentPreview },
+  { name: "PrescriptionEditor", Component: PrescriptionEditor },
+  { name: "ClinicSettings", Component: ClinicSettings },
+  { name: "InventoryWizard", Component: InventoryWizard },
+  { name: "WarehouseDetails", Component: WarehouseDetails },
+  { name: "SupplierPreview", Component: SupplierPreview },
+  { name: "ContractEditor", Component: ContractEditor },
+  { name: "IssueSettings", Component: IssueSettings },
+  { name: "ReleaseWizard", Component: ReleaseWizard },
+  { name: "SprintDetails", Component: SprintDetails },
+  { name: "MilestonePreview", Component: MilestonePreview },
 ];
 
 export function App() {
