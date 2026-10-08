@@ -1,0 +1,220 @@
+import { useState } from "react";
+import { OrderCard } from "./components/OrderCard";
+import { InvoiceList } from "./components/InvoiceList";
+import { CustomerPanel } from "./components/CustomerPanel";
+import { ProductForm } from "./components/ProductForm";
+import { ShipmentTable } from "./components/ShipmentTable";
+import { TicketCard } from "./components/TicketCard";
+import { SessionList } from "./components/SessionList";
+import { ProfilePanel } from "./components/ProfilePanel";
+import { ProjectForm } from "./components/ProjectForm";
+import { TaskTable } from "./components/TaskTable";
+import { CommentCard } from "./components/CommentCard";
+import { ReviewList } from "./components/ReviewList";
+import { PaymentPanel } from "./components/PaymentPanel";
+import { RefundForm } from "./components/RefundForm";
+import { CouponTable } from "./components/CouponTable";
+import { CartCard } from "./components/CartCard";
+import { WishlistList } from "./components/WishlistList";
+import { AlertPanel } from "./components/AlertPanel";
+import { MetricForm } from "./components/MetricForm";
+import { ReportTable } from "./components/ReportTable";
+import { DashboardCard } from "./components/DashboardCard";
+import { WidgetList } from "./components/WidgetList";
+import { ChannelPanel } from "./components/ChannelPanel";
+import { MessageForm } from "./components/MessageForm";
+import { ThreadTable } from "./components/ThreadTable";
+import { ContactCard } from "./components/ContactCard";
+import { LeadList } from "./components/LeadList";
+import { DealPanel } from "./components/DealPanel";
+import { CampaignForm } from "./components/CampaignForm";
+import { SegmentTable } from "./components/SegmentTable";
+import { AudienceCard } from "./components/AudienceCard";
+import { SurveyList } from "./components/SurveyList";
+import { QuestionPanel } from "./components/QuestionPanel";
+import { AnswerForm } from "./components/AnswerForm";
+import { QuizTable } from "./components/QuizTable";
+import { LessonCard } from "./components/LessonCard";
+import { CourseList } from "./components/CourseList";
+import { ModulePanel } from "./components/ModulePanel";
+import { BadgeForm } from "./components/BadgeForm";
+import { RewardTable } from "./components/RewardTable";
+import { TeamCard } from "./components/TeamCard";
+import { MemberList } from "./components/MemberList";
+import { RolePanel } from "./components/RolePanel";
+import { PermissionForm } from "./components/PermissionForm";
+import { PolicyTable } from "./components/PolicyTable";
+import { AuditCard } from "./components/AuditCard";
+import { LogList } from "./components/LogList";
+import { EventPanel } from "./components/EventPanel";
+import { ScheduleForm } from "./components/ScheduleForm";
+import { CalendarTable } from "./components/CalendarTable";
+import { MeetingCard } from "./components/MeetingCard";
+import { ReminderList } from "./components/ReminderList";
+import { NotePanel } from "./components/NotePanel";
+import { DocumentForm } from "./components/DocumentForm";
+import { FolderTable } from "./components/FolderTable";
+import { FileCard } from "./components/FileCard";
+import { ImageList } from "./components/ImageList";
+import { VideoPanel } from "./components/VideoPanel";
+import { PlaylistForm } from "./components/PlaylistForm";
+import { TrackTable } from "./components/TrackTable";
+import { AlbumCard } from "./components/AlbumCard";
+import { ArtistList } from "./components/ArtistList";
+import { PodcastPanel } from "./components/PodcastPanel";
+import { EpisodeForm } from "./components/EpisodeForm";
+import { RecipeTable } from "./components/RecipeTable";
+import { IngredientCard } from "./components/IngredientCard";
+import { MenuList } from "./components/MenuList";
+import { ReservationPanel } from "./components/ReservationPanel";
+import { TableForm } from "./components/TableForm";
+import { GuestTable } from "./components/GuestTable";
+import { RoomCard } from "./components/RoomCard";
+import { BookingList } from "./components/BookingList";
+import { FlightPanel } from "./components/FlightPanel";
+import { HotelForm } from "./components/HotelForm";
+import { TripTable } from "./components/TripTable";
+import { ExpenseCard } from "./components/ExpenseCard";
+import { BudgetList } from "./components/BudgetList";
+import { AccountPanel } from "./components/AccountPanel";
+import { TransactionForm } from "./components/TransactionForm";
+import { WalletTable } from "./components/WalletTable";
+import { DeviceCard } from "./components/DeviceCard";
+import { SensorList } from "./components/SensorList";
+import { ReadingPanel } from "./components/ReadingPanel";
+import { FirmwareForm } from "./components/FirmwareForm";
+import { VehicleTable } from "./components/VehicleTable";
+import { RouteCard } from "./components/RouteCard";
+import { StopList } from "./components/StopList";
+import { DriverPanel } from "./components/DriverPanel";
+import { PatientForm } from "./components/PatientForm";
+import { AppointmentTable } from "./components/AppointmentTable";
+import { PrescriptionCard } from "./components/PrescriptionCard";
+import { ClinicList } from "./components/ClinicList";
+import { InventoryPanel } from "./components/InventoryPanel";
+import { WarehouseForm } from "./components/WarehouseForm";
+import { SupplierTable } from "./components/SupplierTable";
+import { ContractCard } from "./components/ContractCard";
+import { IssueList } from "./components/IssueList";
+import { ReleasePanel } from "./components/ReleasePanel";
+import { SprintForm } from "./components/SprintForm";
+import { MilestoneTable } from "./components/MilestoneTable";
+
+const widgets = [
+  { name: "OrderCard", Component: OrderCard },
+  { name: "InvoiceList", Component: InvoiceList },
+  { name: "CustomerPanel", Component: CustomerPanel },
+  { name: "ProductForm", Component: ProductForm },
+  { name: "ShipmentTable", Component: ShipmentTable },
+  { name: "TicketCard", Component: TicketCard },
+  { name: "SessionList", Component: SessionList },
+  { name: "ProfilePanel", Component: ProfilePanel },
+  { name: "ProjectForm", Component: ProjectForm },
+  { name: "TaskTable", Component: TaskTable },
+  { name: "CommentCard", Component: CommentCard },
+  { name: "ReviewList", Component: ReviewList },
+  { name: "PaymentPanel", Component: PaymentPanel },
+  { name: "RefundForm", Component: RefundForm },
+  { name: "CouponTable", Component: CouponTable },
+  { name: "CartCard", Component: CartCard },
+  { name: "WishlistList", Component: WishlistList },
+  { name: "AlertPanel", Component: AlertPanel },
+  { name: "MetricForm", Component: MetricForm },
+  { name: "ReportTable", Component: ReportTable },
+  { name: "DashboardCard", Component: DashboardCard },
+  { name: "WidgetList", Component: WidgetList },
+  { name: "ChannelPanel", Component: ChannelPanel },
+  { name: "MessageForm", Component: MessageForm },
+  { name: "ThreadTable", Component: ThreadTable },
+  { name: "ContactCard", Component: ContactCard },
+  { name: "LeadList", Component: LeadList },
+  { name: "DealPanel", Component: DealPanel },
+  { name: "CampaignForm", Component: CampaignForm },
+  { name: "SegmentTable", Component: SegmentTable },
+  { name: "AudienceCard", Component: AudienceCard },
+  { name: "SurveyList", Component: SurveyList },
+  { name: "QuestionPanel", Component: QuestionPanel },
+  { name: "AnswerForm", Component: AnswerForm },
+  { name: "QuizTable", Component: QuizTable },
+  { name: "LessonCard", Component: LessonCard },
+  { name: "CourseList", Component: CourseList },
+  { name: "ModulePanel", Component: ModulePanel },
+  { name: "BadgeForm", Component: BadgeForm },
+  { name: "RewardTable", Component: RewardTable },
+  { name: "TeamCard", Component: TeamCard },
+  { name: "MemberList", Component: MemberList },
+  { name: "RolePanel", Component: RolePanel },
+  { name: "PermissionForm", Component: PermissionForm },
+  { name: "PolicyTable", Component: PolicyTable },
+  { name: "AuditCard", Component: AuditCard },
+  { name: "LogList", Component: LogList },
+  { name: "EventPanel", Component: EventPanel },
+  { name: "ScheduleForm", Component: ScheduleForm },
+  { name: "CalendarTable", Component: CalendarTable },
+  { name: "MeetingCard", Component: MeetingCard },
+  { name: "ReminderList", Component: ReminderList },
+  { name: "NotePanel", Component: NotePanel },
+  { name: "DocumentForm", Component: DocumentForm },
+  { name: "FolderTable", Component: FolderTable },
+  { name: "FileCard", Component: FileCard },
+  { name: "ImageList", Component: ImageList },
+  { name: "VideoPanel", Component: VideoPanel },
+  { name: "PlaylistForm", Component: PlaylistForm },
+  { name: "TrackTable", Component: TrackTable },
+  { name: "AlbumCard", Component: AlbumCard },
+  { name: "ArtistList", Component: ArtistList },
+  { name: "PodcastPanel", Component: PodcastPanel },
+  { name: "EpisodeForm", Component: EpisodeForm },
+  { name: "RecipeTable", Component: RecipeTable },
+  { name: "IngredientCard", Component: IngredientCard },
+  { name: "MenuList", Component: MenuList },
+  { name: "ReservationPanel", Component: ReservationPanel },
+  { name: "TableForm", Component: TableForm },
+  { name: "GuestTable", Component: GuestTable },
+  { name: "RoomCard", Component: RoomCard },
+  { name: "BookingList", Component: BookingList },
+  { name: "FlightPanel", Component: FlightPanel },
+  { name: "HotelForm", Component: HotelForm },
+  { name: "TripTable", Component: TripTable },
+  { name: "ExpenseCard", Component: ExpenseCard },
+  { name: "BudgetList", Component: BudgetList },
+  { name: "AccountPanel", Component: AccountPanel },
+  { name: "TransactionForm", Component: TransactionForm },
+  { name: "WalletTable", Component: WalletTable },
+  { name: "DeviceCard", Component: DeviceCard },
+  { name: "SensorList", Component: SensorList },
+  { name: "ReadingPanel", Component: ReadingPanel },
+  { name: "FirmwareForm", Component: FirmwareForm },
+  { name: "VehicleTable", Component: VehicleTable },
+  { name: "RouteCard", Component: RouteCard },
+  { name: "StopList", Component: StopList },
+  { name: "DriverPanel", Component: DriverPanel },
+  { name: "PatientForm", Component: PatientForm },
+  { name: "AppointmentTable", Component: AppointmentTable },
+  { name: "PrescriptionCard", Component: PrescriptionCard },
+  { name: "ClinicList", Component: ClinicList },
+  { name: "InventoryPanel", Component: InventoryPanel },
+  { name: "WarehouseForm", Component: WarehouseForm },
+  { name: "SupplierTable", Component: SupplierTable },
+  { name: "ContractCard", Component: ContractCard },
+  { name: "IssueList", Component: IssueList },
+  { name: "ReleasePanel", Component: ReleasePanel },
+  { name: "SprintForm", Component: SprintForm },
+  { name: "MilestoneTable", Component: MilestoneTable },
+];
+
+export function App() {
+  const [query, setQuery] = useState("");
+  const shown = widgets.filter((w) => w.name.toLowerCase().includes(query.toLowerCase()));
+  return (
+    <main style={{ fontFamily: "system-ui, sans-serif", padding: 16 }}>
+      <h1>Snaclite widgets ({shown.length}/{widgets.length})</h1>
+      <input placeholder="Filter widgets" value={query} onChange={(e) => setQuery(e.target.value)} />
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: 16, marginTop: 16 }}>
+        {shown.map(({ name, Component }) => <Component key={name} />)}
+      </div>
+    </main>
+  );
+}
+
+export default App;
