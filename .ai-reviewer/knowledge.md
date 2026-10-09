@@ -1,24 +1,30 @@
 # momo reviewer notes
 
 ## Architecture
-This is a Vite-powered React 18 + TypeScript application, with `src/App.tsx` acting as a large composition/gallery entry point for domain widgets. Domain components are organized into `src/components`, `src/editors`, and `src/views`, while reusable primitives live in `src/ui` and chart implementations in `src/charts`. The project is client-side only in the sampled files and has no runtime dependencies beyond React.
+
+This is a Vite-powered React 18 + TypeScript application, with strict type-checking and no runtime dependencies beyond React (`package.json`, `tsconfig.json`). `src/App.tsx` acts as a large application/gallery composition root, importing domain widgets from `src/components`, editors from `src/editors`, views from `src/views`, and charts from `src/charts`. Reusable presentational controls live under `src/ui`; charts are self-contained SVG React components.
 
 ## Conventions
-- Use strict TypeScript-compatible React code: `tsconfig.json` enables `strict`, `noUnusedLocals`, `noUnusedParameters`, `isolatedModules`, and `noEmit`; changes must continue to pass `npm run build`.
-- Components use named exports and commonly also provide a default export. For example, `src/charts/AccountChart.tsx` exports both `AccountChart` and `default AccountChart`.
-- Chart files follow a deliberately consistent per-domain naming scheme: `AccountPoint`, `AccountChartMode`, `AccountChartProps`, `generateAccountSeries`, and `AccountChart` in `src/charts/AccountChart.tsx`; the same pattern appears in `AlbumChart.tsx`, `AlertChart.tsx`, and related files.
-- Charts accept optional `title`, `data`, `width`, and `height`, derive fallback data with `useMemo`, and support `"bar"`/`"line"` modes with local `useState`; preserve this API shape when adding charts.
-- Shared UI components are controlled where applicable. Keep state in consumers, as documented in `src/ui/README.md`; use explicit `type="submit"` for submitting buttons because `Button` defaults to `"button"`.
-- Shared form controls should use their native attributes and accessible labels/error links. `Card` provides an accessible heading, and status badges must include text rather than relying only on color (`src/ui/README.md`).
-- New domain widgets should be registered through the corresponding structure in `src/App.tsx`; the entry point imports component, editor, and view variants from their respective directories.
+
+- Use TypeScript React components in `.tsx` files and ES module imports/exports; the project uses `"type": "module"` and `jsx: "react-jsx"` (`package.json`, `tsconfig.json`).
+- Keep reusable UI components under `src/ui` and import them with relative paths, as shown in `src/ui/README.md`.
+- Controlled UI components keep their state in the consuming widget. `SearchInput`, for example, receives `value` and `onChange`; form controls accept native attributes (`src/ui/README.md`).
+- Buttons default to non-submit behavior; use `type="submit"` explicitly in forms (`src/ui/README.md`). Existing chart mode controls follow this rule (`src/charts/AccountChart.tsx`).
+- Charts follow a repeated domain-specific naming pattern: `{Domain}Point`, `{Domain}ChartMode`, `{Domain}ChartProps`, `generate{Domain}Series`, and `{Domain}Chart` (`src/charts/AccountChart.tsx`, `src/charts/AlbumChart.tsx`).
+- Chart components accept optional `title`, `data`, `width`, and `height`, provide deterministic generated fallback data, and expose both named and default exports (`src/charts/AccountChart.tsx`).
+- Chart rendering is native SVG rather than a charting package. Shared visual behavior includes `PADDING = 24`, bar/line mode switching, hover state, average/trend annotations, and `role="img"` with an accessible label (`src/charts/AccountChart.tsx`).
+- Maintain strict TypeScript cleanliness: `strict`, `noUnusedLocals`, `noUnusedParameters`, `isolatedModules`, and `noEmit` are enabled (`tsconfig.json`). The expected validation command is `npm run build`, which type-checks before running `vite build` (`package.json`, `src/ui/README.md`).
 
 ## Intentional non-standard choices
-- The many nearly identical domain-specific chart files are intentional specialization, not accidental duplication: each has its own point type, generator, CSS class, default title, and seed (for example `src/charts/AccountChart.tsx` versus `src/charts/AlbumChart.tsx`).
-- Chart fallback data is deterministic pseudo-random data generated from a local linear-congruential sequence, rather than using `Math.random()` (`src/charts/AccountChart.tsx`).
-- Charts use inline SVG primitives and literal colors, with no charting package or stylesheet dependency (`package.json`, `src/charts/AccountChart.tsx`).
+
+- The repository/package identity differs: the repository is `momo`, while `package.json` names the package `snaclite`. Do not flag this as a build issue without evidence that package metadata is required to match.
+- Many chart files intentionally duplicate nearly identical implementations with domain-specific types, class names, seeds, and defaults (`src/charts/AccountChart.tsx`, `src/charts/AlbumChart.tsx`, `src/charts/AlertChart.tsx`).
+- Generated chart data uses a small deterministic linear-congruential calculation rather than `Math.random()`, making fallback charts stable (`src/charts/AccountChart.tsx`).
+- Extra blank lines at the ends of chart files and default exports alongside named exports are established patterns, not necessarily accidental (`src/charts/AccountChart.tsx`).
 
 ## Watch out for
-- Preserve unique React keys: charts currently key points by `p.label`; generated labels must remain unique, and supplied data should not contain duplicate labels (`src/charts/AccountChart.tsx`).
-- Check `useMemo` dependencies when changing chart dimensions. The path memo depends on `series`, `step`, and `max`, but its `y()` calculation also uses `height`/`innerH`; resizing behavior can become stale (`src/charts/AccountChart.tsx`).
-- Do not introduce unused imports, props, or locals; the TypeScript configuration treats these as build failures (`tsconfig.json`).
-- Avoid replacing native accessible controls with custom equivalents in `src/ui`; `Disclosure` intentionally uses native browser interaction, and controlled components require consumer-owned state (`src/ui/README.md`).
+
+- Do not add UI libraries, charting packages, or standalone stylesheets for shared UI; the documented UI layer deliberately has no extra packages or stylesheets (`src/ui/README.md`).
+- Preserve unique React keys for chart points (`key={p.label}`) and unique IDs for definition-list items (`src/ui/README.md`).
+- Flag changes that remove accessible labels, status wording, linked error text, or native control semantics from shared UI and SVG components (`src/ui/README.md`, `src/charts/AccountChart.tsx`).
+- Check new code against strict unused-variable/unused-parameter rules; `npm run build` will fail on violations.
