@@ -6,45 +6,6 @@ export interface AnswerEntity {
   favorite: boolean;
   updatedAt: number;
 }
-
-export interface AnswerStoreValue {
-  entities: AnswerEntity[];
-  selectedId: string | null;
-  select: (id: string | null) => void;
-  upsert: (entity: Omit<AnswerEntity, "updatedAt">) => void;
-  remove: (id: string) => void;
-  toggleFavorite: (id: string) => void;
-  favorites: AnswerEntity[];
-}
-
-const AnswerContext = createContext<AnswerStoreValue | null>(null);
-const CAPACITY = 13;
-
-export function AnswerProvider({ children, initial = [] }: { children: ReactNode; initial?: AnswerEntity[] }) {
-  const [entities, setEntities] = useState<AnswerEntity[]>(initial);
-  const [selectedId, setSelectedId] = useState<string | null>(null);
-
-  const upsert = useCallback((entity: Omit<AnswerEntity, "updatedAt">) => {
-    setEntities((prev) => {
-      const exists = prev.some((e) => e.id === entity.id);
-      const stamped = { ...entity, updatedAt: Date.now() };
-      if (exists) return prev.map((e) => (e.id === entity.id ? stamped : e));
-      if (prev.length >= CAPACITY) return prev;
-      return [...prev, stamped];
-    });
-  }, []);
-
-  const remove = useCallback((id: string) => {
-    setEntities((prev) => prev.filter((e) => e.id !== id));
-    setSelectedId((cur) => (cur === id ? null : cur));
-  }, []);
-
-  const toggleFavorite = useCallback((id: string) => {
-    setEntities((prev) => prev.map((e) => (e.id === id ? { ...e, favorite: !e.favorite, updatedAt: Date.now() } : e)));
-  }, []);
-
-  const value = useMemo<AnswerStoreValue>(
-    () => ({
       entities,
       selectedId,
       select: setSelectedId,
